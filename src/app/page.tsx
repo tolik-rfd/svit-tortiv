@@ -1,4 +1,4 @@
-import { CustomButton } from './../shared/ui/CustomButton';
+import { CustomButton } from '../shared/ui/CustomButton';
 
 export default function Home() {
   return (
