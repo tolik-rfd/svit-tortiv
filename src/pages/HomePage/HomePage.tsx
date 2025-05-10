@@ -1,6 +1,6 @@
 import { CustomButton } from '../../shared/ui/CustomButton';
 
-export function HomePage() {
+export default function HomePage() {
   return (
     <div className='bg-custom-cofe min-h-screen'>
       <h2 className='text-white text-title-sm'>Hello World!</h2>
