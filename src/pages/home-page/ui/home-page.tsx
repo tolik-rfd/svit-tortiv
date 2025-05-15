@@ -1,6 +1,6 @@
 import { productsService } from "@/shared/api/supabase/services/products/products-service";
 import { CustomButton } from "@/shared/ui/CustomButton";
-import { Button } from "@/shared/ui/button";
+import { Button } from "@/shared/ui/shadcn-button-example/button";
 
 export default async function HomePage() {
   // const products = await productsService.getProducts();
