@@ -86,9 +86,14 @@ module.exports = {
         "xl-custom": "1440px",
       },
       borderRadius: {
+        "custom-50": "3.125rem",
+        "custom-80": "5rem",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      lineHeight: {
+        "custom-16": "1rem",
       },
     },
   },

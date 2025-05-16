@@ -16,7 +16,7 @@ const TabsList = forwardRef<ComponentRef<typeof List>, TabsListProps>(
       <List
         ref={ref}
         className={cn(
-          "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
+          "inline-flex bg-custom-cofe rounded-custom-50 p-1 leading-custom-16",
           className
         )}
         {...rest}
@@ -35,7 +35,7 @@ const TabsTrigger = forwardRef<ComponentRef<typeof Trigger>, TabsTriggerProps>(
       <Trigger
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm",
+          "inline-flex items-center justify-center whitespace-nowrap transition-all rounded-custom-80 px-10 py-5 text-xl text-dark uppercase bg-custom-cofe disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-dark data-[state=active]:text-white data-[state=active]:shadow-sm ",
           className
         )}
         {...rest}

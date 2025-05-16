@@ -5,7 +5,7 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   tags: ["autodocs"],
   args: {
-    defaultValue: "account",
+    defaultValue: "Кондитерам",
   },
 };
 
@@ -17,14 +17,14 @@ export const Default: Story = {
   render: (args) => (
     <Tabs {...args}>
       <TabsList>
-        <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsTrigger value="password">Password</TabsTrigger>
+        <TabsTrigger value="Кондитерам">Кондитерам</TabsTrigger>
+        <TabsTrigger value="Замовникам">Замовникам</TabsTrigger>
       </TabsList>
-      <TabsContent value="account">
-        <p>This is the Account tab content.</p>
+      <TabsContent value="Кондитерам">
+        <p>This is the Кондитерам tab content.</p>
       </TabsContent>
-      <TabsContent value="password">
-        <p>This is the Password tab content.</p>
+      <TabsContent value="Замовникам">
+        <p>This is the Замовникам tab content.</p>
       </TabsContent>
     </Tabs>
   ),
