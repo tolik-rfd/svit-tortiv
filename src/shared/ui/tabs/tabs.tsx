@@ -4,14 +4,46 @@ import { ComponentPropsWithoutRef, ComponentRef, forwardRef } from "react";
 import { Content, List, Root, Trigger } from "@radix-ui/react-tabs";
 
 import { cn } from "@/shared/lib/utils";
+import { createContext } from "@/shared/hooks/context";
 
-const Tabs = Root;
+//////////////////////////////////////////////////////////////////////////////////////////////
+type TabsContextValue = Pick<TabsProps, "variant">;
+
+const [TabsContextProvider, useTabsContext] = createContext<TabsContextValue>({
+  strict: true,
+  name: "TabsContext",
+  errorMessage:
+    "useTabsContext: `context` is undefined. Seems you forgot to wrap modal components in `<Modal />`",
+});
+
+////////////////////////////////////////////////////////////////////////////////////
+
+interface TabsProps extends ComponentPropsWithoutRef<typeof Root> {
+  variant?: "primary" | "secondary";
+}
+
+const Tabs = forwardRef<ComponentRef<typeof Root>, TabsProps>((props, ref) => {
+  const { variant = "primary", ...rest } = props;
+  const context = { variant };
+
+  return (
+    <TabsContextProvider value={context}>
+      <Root ref={ref} {...rest} />
+    </TabsContextProvider>
+  );
+});
+Tabs.displayName = List.displayName;
+
+////////////////////////////////////////////////////////////////////////////////////
 
 interface TabsListProps extends ComponentPropsWithoutRef<typeof List> {}
 
 const TabsList = forwardRef<ComponentRef<typeof List>, TabsListProps>(
   (props, ref) => {
     const { className, ...rest } = props;
+    const { variant } = useTabsContext();
+    console.log(variant);
+
     return (
       <List
         ref={ref}
@@ -26,11 +58,15 @@ const TabsList = forwardRef<ComponentRef<typeof List>, TabsListProps>(
 );
 TabsList.displayName = List.displayName;
 
+////////////////////////////////////////////////////////////////////////////////////
+
 interface TabsTriggerProps extends ComponentPropsWithoutRef<typeof Trigger> {}
 
 const TabsTrigger = forwardRef<ComponentRef<typeof Trigger>, TabsTriggerProps>(
   (props, ref) => {
     const { className, ...rest } = props;
+    const { variant } = useTabsContext();
+
     return (
       <Trigger
         ref={ref}
@@ -45,11 +81,15 @@ const TabsTrigger = forwardRef<ComponentRef<typeof Trigger>, TabsTriggerProps>(
 );
 TabsTrigger.displayName = Trigger.displayName;
 
+////////////////////////////////////////////////////////////////////////////////////
+
 const TabsContent = forwardRef<
   ComponentRef<typeof Content>,
   ComponentPropsWithoutRef<typeof Content>
 >((props, ref) => {
   const { className, ...rest } = props;
+  const { variant } = useTabsContext();
+
   return (
     <Content
       ref={ref}

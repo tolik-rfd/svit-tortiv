@@ -18,6 +18,7 @@ module.exports = {
       },
       lineHeight: {
         base: "1.4",
+        "custom-16": "1rem",
       },
       fontFamily: {
         "e-Ukraine": ["e-Ukraine", "sans-serif"],
@@ -91,9 +92,6 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      lineHeight: {
-        "custom-16": "1rem",
       },
     },
   },
