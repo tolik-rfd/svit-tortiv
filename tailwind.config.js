@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      padding: {
+        "custom-18": "1.125rem",
+      },
       fontSize: {
         xs: "0.75rem",
         sm: "0.875rem",
@@ -36,6 +39,7 @@ module.exports = {
         "custom-peach": "#ffc9b1",
         "custom-yellow": "#ffe55a",
         "custom-light": "#f9efe6",
+        "custom-light-gray": "#d9d9d9",
         "custom-gray": {
           DEFAULT: "#E5DED9",
           hover: "#C9C3BFFF",

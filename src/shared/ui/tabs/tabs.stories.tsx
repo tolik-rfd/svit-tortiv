@@ -4,18 +4,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
   tags: ["autodocs"],
-  args: {
-    defaultValue: "Кондитерам",
-  },
 };
 
 export default meta;
 
 type Story = StoryObj<typeof Tabs>;
 
-export const Default: Story = {
+export const Primary: Story = {
   render: (args) => (
-    <Tabs {...args}>
+    <Tabs {...args} defaultValue="Кондитерам">
       <TabsList>
         <TabsTrigger value="Кондитерам">Кондитерам</TabsTrigger>
         <TabsTrigger value="Замовникам">Замовникам</TabsTrigger>
@@ -26,6 +23,43 @@ export const Default: Story = {
       <TabsContent value="Замовникам">
         <p>This is the Замовникам tab content.</p>
       </TabsContent>
+    </Tabs>
+  ),
+};
+
+export const Secondary: Story = {
+  render: (args) => (
+    <Tabs {...args} variant="secondary" defaultValue="Алергії">
+      <TabsList>
+        <TabsTrigger value="Опис">Опис</TabsTrigger>
+        <TabsTrigger value="Алергії">Алергії</TabsTrigger>
+        <TabsTrigger value="Про Кондитера">Про Кондитера</TabsTrigger>
+      </TabsList>
+      <TabsContent value="Опис">
+        <p>Lorem ipsum dolor sit,</p>
+      </TabsContent>
+      <TabsContent value="Алергії">
+        <p>
+          Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos.
+        </p>
+      </TabsContent>
+      <TabsContent value="Про Кондитера">
+        <p>This is the Про кондитера tab content.</p>
+      </TabsContent>
+    </Tabs>
+  ),
+};
+
+export const NavTabs: Story = {
+  render: (args) => (
+    <Tabs {...args} defaultValue="Кондитерам">
+      <TabsList>
+        <TabsTrigger value="Кондитерам">Кондитерам</TabsTrigger>
+        <TabsTrigger value="Замовникам">Замовникам</TabsTrigger>
+      </TabsList>
     </Tabs>
   ),
 };
