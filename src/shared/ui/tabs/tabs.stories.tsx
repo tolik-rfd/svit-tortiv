@@ -55,11 +55,20 @@ export const Secondary: Story = {
 
 export const NavTabs: Story = {
   render: (args) => (
-    <Tabs {...args} defaultValue="Кондитерам">
-      <TabsList>
-        <TabsTrigger value="Кондитерам">Кондитерам</TabsTrigger>
-        <TabsTrigger value="Замовникам">Замовникам</TabsTrigger>
-      </TabsList>
-    </Tabs>
+    <div className="flex gap-6 flex-col">
+      <Tabs {...args} defaultValue="Кондитерам">
+        <TabsList>
+          <TabsTrigger value="Кондитерам">Кондитерам</TabsTrigger>
+          <TabsTrigger value="Замовникам">Замовникам</TabsTrigger>
+        </TabsList>
+      </Tabs>
+      <Tabs {...args} defaultValue="Нові замовлення">
+        <TabsList>
+          <TabsTrigger value="Нові замовлення">Нові замовлення</TabsTrigger>
+          <TabsTrigger value="Виконано">Виконано</TabsTrigger>
+          <TabsTrigger value="Відмовлено">Відмовлено</TabsTrigger>
+        </TabsList>
+      </Tabs>
+    </div>
   ),
 };
