@@ -4,6 +4,14 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      padding: {
+        "custom-10": "0.625rem",
+        "custom-18": "1.125rem",
+      },
+      margin: {
+        "custom-10": "0.625rem",
+        "custom-18": "1.125rem",
+      },
       fontSize: {
         xs: "0.75rem",
         sm: "0.875rem",
@@ -18,6 +26,7 @@ module.exports = {
       },
       lineHeight: {
         base: "1.4",
+        "custom-16": "1rem",
       },
       fontFamily: {
         "e-Ukraine": ["e-Ukraine", "sans-serif"],
@@ -35,6 +44,7 @@ module.exports = {
         "custom-peach": "#ffc9b1",
         "custom-yellow": "#ffe55a",
         "custom-light": "#f9efe6",
+        "custom-light-gray": "#d9d9d9",
         "custom-gray": {
           DEFAULT: "#E5DED9",
           hover: "#C9C3BFFF",
@@ -86,6 +96,8 @@ module.exports = {
         "xl-custom": "1440px",
       },
       borderRadius: {
+        "custom-50": "3.125rem",
+        "custom-80": "5rem",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
