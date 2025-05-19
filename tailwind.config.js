@@ -5,6 +5,11 @@ module.exports = {
   theme: {
     extend: {
       padding: {
+        "custom-10": "0.625rem",
+        "custom-18": "1.125rem",
+      },
+      margin: {
+        "custom-10": "0.625rem",
         "custom-18": "1.125rem",
       },
       fontSize: {

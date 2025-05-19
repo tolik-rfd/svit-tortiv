@@ -40,8 +40,8 @@ Tabs.displayName = List.displayName;
 const tabsListVariants = cva("inline-flex leading-none", {
   variants: {
     variant: {
-      primary: "bg-custom-cofe rounded-custom-50 p-1",
-      secondary: "p-2 gap-6",
+      primary: "bg-custom-cofe p-1 rounded-custom-50",
+      secondary: "p-2 gap-6 sm:p-custom-10 sm:gap-6",
     },
   },
   defaultVariants: {
@@ -71,14 +71,14 @@ TabsList.displayName = List.displayName;
 
 ////////////////////////////////////////////////////////////////////////////////////
 const tabsTriggerVariants = cva(
-  "inline-flex  whitespace-nowrap uppercase transition-all disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         primary:
-          "rounded-custom-80 px-10 py-custom-18 text-xl font-normal text-dark  bg-custom-cofe  data-[state=active]:bg-dark data-[state=active]:text-white ",
+          "bg-custom-cofe text-base text-dark font-normal px-custom-18 py-4 uppercase rounded-custom-80 sm:text-xl sm:px-10 sm:py-custom-18 data-[state=active]:bg-dark data-[state=active]:text-white",
         secondary:
-          "text-custom-light-gray text-2xl font-medium data-[state=active]:text-black ",
+          "text-custom-light-gray text-base font-medium data-[state=active]:text-black sm:text-2xl ",
       },
     },
     defaultVariants: {
@@ -114,7 +114,7 @@ const tabsContentVariants = cva("", {
     variant: {
       primary:
         "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-      secondary: "text-xl p-2 mt-[10px] font-normal",
+      secondary: "text-sm px-2 mt-custom-10 font-light sm:text-xl",
     },
   },
   defaultVariants: {
