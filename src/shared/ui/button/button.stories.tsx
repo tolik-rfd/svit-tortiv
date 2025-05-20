@@ -47,22 +47,28 @@ export const Variants: Story = {
       <Button {...args} variant='orange'>
         Дивитися всі
       </Button>
+
       <Button {...args} variant='orange' size='lg'>
         Дивитися всі
       </Button>
+
       <Button {...args} variant='orange' size='sm'>
         Дивитися всі
       </Button>
+
       <Button {...args} variant='white'>
         Дивитися всі
       </Button>
+
       <Button {...args} variant='gray'>
         Дивитися всі
       </Button>
+
       <Button {...args} variant='google' size='md'>
         <Image src='/icons/google.svg' width={30} height={30} alt='Google' />
         Google
       </Button>
+
       <Button {...args} variant='link' size='sm'>
         Дивитися всі
         <Image
@@ -72,8 +78,9 @@ export const Variants: Story = {
           alt='Google'
           className='fill-current'
         />
-      </Button>
-      <Button {...args} variant='link-exit' size='xs'>
+			</Button>
+			
+      <Button {...args} variant='link-enter' size='xs'>
         <span className="relative after:content-[''] after:absolute after:bottom-0 after:h-[1px] after:w-[120%] after:bg-current after:left-1/2 after:-translate-x-1/2">
           вхід
         </span>

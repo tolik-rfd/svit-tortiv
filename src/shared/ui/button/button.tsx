@@ -17,7 +17,7 @@ const buttonVariants = cva(
         google:
           'bg-custom-gray text-dark capitalize hover:bg-custom-cofe active:bg-custom-gray',
         link: 'text-dark hover:text-custom-orange',
-        'link-exit': 'text-dark hover:bg-custom-cofe active:bg-none',
+        'link-enter': 'text-dark hover:bg-custom-cofe active:bg-none',
       },
       size: {
         default: 'h-[52px] py-[11.5px] w-[324px]',
