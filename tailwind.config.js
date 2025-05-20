@@ -5,16 +5,16 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        xs: '0.75rem',
-        sm: '0.875rem',
+        xs: '0.75rem', //12px
+        sm: '0.875rem', //14px
         base: '1rem', //16px
         lg: '1.125rem', //18px
         xl: '1.25rem', //20px
-        '2xl': '1.5rem',
-        'title-sm': '2.5rem',
-        '5xl': '3rem',
-        '6xl': '3.75rem',
-        'title-lg': '5.375rem',
+        '2xl': '1.5rem', //24px
+        'title-sm': '2.5rem', //40px
+        '5xl': '3rem', //48px
+        '6xl': '3.75rem', //60px
+        'title-lg': '5.375rem', //86px
       },
       lineHeight: {
         base: '1.4',
