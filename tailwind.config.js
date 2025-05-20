@@ -4,6 +4,14 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      padding: {
+        "custom-10": "0.625rem",
+        "custom-18": "1.125rem",
+      },
+      margin: {
+        "custom-10": "0.625rem",
+        "custom-18": "1.125rem",
+      },
       fontSize: {
         xs: '0.75rem', //12px
         sm: '0.875rem', //14px
@@ -17,7 +25,8 @@ module.exports = {
         'title-lg': '5.375rem', //86px
       },
       lineHeight: {
-        base: '1.4',
+        base: "1.4",
+        "custom-16": "1rem",
       },
       fontFamily: {
         'e-Ukraine': ['e-Ukraine', 'sans-serif'],
@@ -28,16 +37,17 @@ module.exports = {
           DEFAULT: '#e1780e',
           hover: '#C1680EFF',
         },
-        'custom-tiffany': '#a0d8e1',
-        'custom-blue': '#15a6e5',
-        'custom-lilac': '#dfc6ff',
-        'custom-cofe': '#e2d7cf',
-        'custom-peach': '#ffc9b1',
-        'custom-yellow': '#ffe55a',
-        'custom-light': '#f9efe6',
-        'custom-gray': {
-          DEFAULT: '#E5DED9',
-          hover: '#C9C3BFFF',
+        "custom-tiffany": "#a0d8e1",
+        "custom-blue": "#15a6e5",
+        "custom-lilac": "#dfc6ff",
+        "custom-cofe": "#e2d7cf",
+        "custom-peach": "#ffc9b1",
+        "custom-yellow": "#ffe55a",
+        "custom-light": "#f9efe6",
+        "custom-light-gray": "#d9d9d9",
+        "custom-gray": {
+          DEFAULT: "#E5DED9",
+          hover: "#C9C3BFFF",
         },
         dark: '#331207',
         background: 'hsl(var(--background))',
@@ -86,9 +96,11 @@ module.exports = {
         'xl-custom': '1440px',
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        "custom-50": "3.125rem",
+        "custom-80": "5rem",
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
