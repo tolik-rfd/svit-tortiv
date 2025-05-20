@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
 import Image from 'next/image';
-import GoogleIcon from '@/shared/assets/icons/google.svg';
 
 const meta: Meta<typeof Button> = {
   title: 'UI Components/Shadcn Button',
@@ -79,7 +78,6 @@ export const Variants: Story = {
           вхід
         </span>
       </Button>
-      <GoogleIcon/>
     </div>
   ),
 };
