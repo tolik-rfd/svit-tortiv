@@ -9,28 +9,35 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        orange: 'bg-custom-orange text-white hover:bg-dark',
-        white:
-          'bg-white text-dark border border-dark hover:bg-dark hover:text-white',
-        gray: 'bg-custom-gray text-dark hover:bg-custom-cofe active:bg-custom-gray',
-        google:
-          'bg-custom-gray text-dark capitalize hover:bg-custom-cofe active:bg-custom-gray',
-        link: 'text-dark hover:text-custom-orange',
-        'link-enter': 'text-dark hover:bg-custom-cofe active:bg-none',
+        default: '',
+        'outlined-primary': 'border border-gray hover:border-custom-orange',
+        'outlined-secondary': 'border border-dark',
+        google: 'capitalize',
+        link: 'font-bold',
+        'link-enter': 'active:bg-none',
       },
       size: {
-        default: 'h-[52px] py-[11.5px] w-[324px]',
-        xs: 'h-[39px] w-[99px] px-[30px]',
+        default: 'h-[52px] w-[324px]',
+        xs: 'h-[39px] px-[30px]',
         sm: 'h-[42px] w-[235px]',
+        link: 'h-[49px] px-[20px]',
         md: 'h-[62px] w-[324px] text-lg font-medium',
-        lg: 'h-[70px] py-[24px] text-lg w-[324px]',
-        icon: 'h-10 w-10',
+        lg: 'h-[70px] w-[324px] text-lg',
+        full: 'h-[42px] w-full',
+      },
+      variantColor: {
+        default: 'bg-none text-dark hover:text-custom-orange',
+        orange: 'bg-custom-orange text-white hover:bg-dark',
+        gray: 'bg-custom-gray text-dark hover:bg-custom-cofe active:bg-custom-gray',
+        white: 'bg-white text-dark',
+        whiteToDark: 'bg-white text-dark hover:bg-dark hover:text-white',
+        dark: 'bg-dark text-white hover:bg-custom-orange active:bg-custom-orange',
       },
     },
     defaultVariants: {
       variant: 'default',
       size: 'default',
+      variantColor: 'orange',
     },
   }
 );
@@ -38,18 +45,29 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
+	asChild?: boolean;
+	startIcon?: React.ReactNode;
+	endIcon?: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  (
+    { className, variant, size, variantColor, children, asChild = false, startIcon, endIcon, ...props },
+    ref
+  ) => {
     const Comp = asChild ? Slot : 'button';
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(
+          buttonVariants({ variant, size, variantColor, className })
+        )}
         ref={ref}
         {...props}
-      />
+      >
+        {startIcon && <span>{startIcon}</span>}
+        {children}
+        {endIcon && <span>{endIcon}</span>}
+      </Comp>
     );
   }
 );

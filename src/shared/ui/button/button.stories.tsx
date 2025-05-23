@@ -1,32 +1,37 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
-import Image from 'next/image';
+import { GoogleIcon } from '../../assets/icons/GoogleIcon';
+import { ViewAllIcon } from '../../assets/icons/ViewAllIcon';
+import { CatalogIcon } from '../../assets/icons/CatalogIcon';
 
 const meta: Meta<typeof Button> = {
-  title: 'UI Components/Shadcn Button',
   component: Button,
   tags: ['autodocs'],
   args: {
     children: 'Click me',
     variant: 'default',
     size: 'default',
+		variantColor: 'orange',
   },
   argTypes: {
     variant: {
       control: 'select',
       options: [
         'default',
-        'destructive',
-        'outline',
-        'orange',
-        'secondary',
-        'ghost',
+        'outlined-primary',
+        'outlined-secondary',
+        'google',
         'link',
+        'link-enter',
       ],
     },
     size: {
       control: 'select',
-      options: ['default', 'sm', 'lg', 'icon'],
+      options: ['default', 'xs', 'sm', 'link', 'md', 'lg', 'full'],
+    },
+    variantColor: {
+      control: 'select',
+      options: ['default', 'orange', 'gray', 'white', 'whiteToDark', 'dark'],
     },
     asChild: {
       control: 'boolean',
@@ -44,46 +49,73 @@ export const Default: Story = {};
 export const Variants: Story = {
   render: (args) => (
     <div className='flex gap-4 flex-wrap'>
-      <Button {...args} variant='orange'>
-        Дивитися всі
+      <Button {...args}>default</Button>
+
+      <Button {...args} size='lg'>
+        default lg
       </Button>
 
-      <Button {...args} variant='orange' size='lg'>
-        Дивитися всі
+      <Button {...args} size='sm'>
+        default sm
       </Button>
 
-      <Button {...args} variant='orange' size='sm'>
-        Дивитися всі
+      <Button {...args} variant='outlined-primary' variantColor='white'>
+        outlined-primary
       </Button>
 
-      <Button {...args} variant='white'>
-        Дивитися всі
+      <Button {...args} variant='outlined-secondary' variantColor='whiteToDark'>
+        outlined-secondary
       </Button>
 
-      <Button {...args} variant='gray'>
-        Дивитися всі
+      <Button {...args} variantColor='gray'>
+        Gray
       </Button>
 
-      <Button {...args} variant='google' size='md'>
-        <Image src='/icons/google.svg' width={30} height={30} alt='Google' />
+      <Button {...args} variantColor='dark'>
+        Dark
+      </Button>
+
+      <Button {...args} variant='link-enter' variantColor='gray' size='xs'>
+        <span className="relative after:content-[''] after:absolute after:bottom-0 after:h-[1px] after:w-[130%] after:bg-current after:left-1/2 after:-translate-x-1/2">
+          вхід
+        </span>
+      </Button>
+
+      <Button {...args} size='full'>
+        Додати в кошик
+      </Button>
+
+      <Button {...args} variantColor='gray' size='full'>
+        Детальніше
+      </Button>
+
+      <Button
+        {...args}
+        variant='google'
+        variantColor='gray'
+        size='md'
+        startIcon={<GoogleIcon />}
+      >
         Google
       </Button>
 
-      <Button {...args} variant='link' size='sm'>
+      <Button
+        {...args}
+        variant='link'
+        variantColor='dark'
+        size='link'
+        startIcon={<CatalogIcon />}
+      >
+        Каталог
+      </Button>
+
+      <Button
+        {...args}
+        variantColor='default'
+        size='xs'
+        endIcon={<ViewAllIcon />}
+      >
         Дивитися всі
-        <Image
-          src='/icons/view-all.svg'
-          width={17}
-          height={17}
-          alt='Google'
-          className='fill-current'
-        />
-			</Button>
-			
-      <Button {...args} variant='link-enter' size='xs'>
-        <span className="relative after:content-[''] after:absolute after:bottom-0 after:h-[1px] after:w-[120%] after:bg-current after:left-1/2 after:-translate-x-1/2">
-          вхід
-        </span>
       </Button>
     </div>
   ),
@@ -92,30 +124,23 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: (args) => (
     <div className='flex gap-4 flex-wrap items-center'>
-      <Button {...args} size='sm'>
-        Small
-      </Button>
       <Button {...args} size='default'>
         Default
       </Button>
+      <Button {...args} size='xs'>
+        XSmall
+      </Button>
+      <Button {...args} size='sm'>
+        Small
+      </Button>
+      <Button {...args} size='link'>
+        Link
+      </Button>
+      <Button {...args} size='md'>
+        Medium
+      </Button>
       <Button {...args} size='lg'>
         Large
-      </Button>
-      <Button {...args} size='icon' aria-label='Icon Button'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          className='size-4'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-            d='M5 12h14M12 5l7 7-7 7'
-          />
-        </svg>
       </Button>
     </div>
   ),
