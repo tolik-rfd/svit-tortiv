@@ -1,9 +1,8 @@
-import type { Preview } from "@storybook/react";
-import "../src/app/globals.css";
+import type { Preview } from '@storybook/react';
+import '../src/app/globals.css';
 import {
   INITIAL_VIEWPORTS,
-  MINIMAL_VIEWPORTS,
-} from "@storybook/addon-viewport";
+} from '@storybook/addon-viewport';
 
 const preview: Preview = {
   parameters: {
@@ -20,3 +19,4 @@ const preview: Preview = {
 };
 
 export default preview;
+
