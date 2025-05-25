@@ -8,7 +8,8 @@ const meta: Meta<typeof Button> = {
     children: 'Дивиться всі',
     variant: 'contained',
     color: 'orange',
-    size: 'xs',
+		size: 'xs',
+		disabled: false,
   },
   argTypes: {
     children: { control: 'text' },
