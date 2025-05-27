@@ -1,15 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Button } from './button';
+import { CustomButton } from './customButton';
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof CustomButton> = {
+  component: CustomButton,
   tags: ['autodocs'],
   args: {
     children: 'Дивиться всі',
     variant: 'contained',
     color: 'orange',
-		size: 'xs',
-		disabled: false,
+    size: 'xs',
+    disabled: false,
   },
   argTypes: {
     children: { control: 'text' },
@@ -18,8 +18,8 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof CustomButton>;
 
 export const Primary: Story = {
-  render: (args) => <Button {...args} />,
+  render: (args) => <CustomButton {...args} />,
 };

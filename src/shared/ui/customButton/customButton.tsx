@@ -1,34 +1,37 @@
-import { ComponentProps, FC } from 'react';
-import styles from './button.module.css';
+import { FC } from 'react';
+import { BaseButtonProps } from '../baseButton';
+import styles from './customButton.module.css';
 import { cn } from '@/shared/lib/utils';
+import { BaseButton } from '../baseButton';
 
-interface ButtonProps extends ComponentProps<'button'> {
+interface CustomButtonProps extends BaseButtonProps {
   variant?: 'contained' | 'outlined' | 'text';
   size?: 'xs' | 'sm' | 'md' | 'lg';
   color?: 'orange' | 'dark' | 'gray';
-  disabled?: boolean;
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const CustomButton: FC<CustomButtonProps> = (props) => {
   const {
     variant = 'contained',
     size = 'sm',
     color = 'orange',
     children,
-    disabled,
+    className,
+    ...rest
   } = props;
 
   return (
-    <button
-      disabled={disabled}
+    <BaseButton
       className={cn(
         styles.base,
         styles[variant],
         styles[`size-${size}`],
-        styles[`color-${color}`]
+        styles[`color-${color}`],
+        className
       )}
+      {...rest}
     >
       {children}
-    </button>
+    </BaseButton>
   );
 };
