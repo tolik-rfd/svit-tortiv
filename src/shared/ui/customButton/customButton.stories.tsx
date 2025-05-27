@@ -1,18 +1,18 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { CustomButton } from './customButton';
+import { Meta, StoryObj } from "@storybook/react";
+import { CustomButton } from "./customButton";
 
 const meta: Meta<typeof CustomButton> = {
   component: CustomButton,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {
-    children: 'Дивиться всі',
-    variant: 'contained',
-    color: 'orange',
-    size: 'xs',
+    children: "Дивиться всі",
+    variant: "contained",
+    color: "orange",
+    size: "xs",
     disabled: false,
   },
   argTypes: {
-    children: { control: 'text' },
+    children: { control: "text" },
   },
 };
 
