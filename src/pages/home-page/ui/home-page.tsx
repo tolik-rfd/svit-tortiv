@@ -1,16 +1,16 @@
 // import { productsService } from "@/shared/api/supabase/services/products/products-service";
-import { CustomButton } from '@/shared/ui/customButton';
-import Link from 'next/link';
+import { CustomButton } from "@/shared/ui/custom-button";
+import Link from "next/link";
 
 export default async function HomePage() {
   // const products = await productsService.getProducts();
 
   return (
-    <div className='bg-custom-cofe min-h-screen'>
-      <h2 className='text-white text-title-sm'>Hello World!</h2>
+    <div className="bg-custom-cofe min-h-screen">
+      <h2 className="text-white text-title-sm">Hello World!</h2>
       <CustomButton>Дивитися всі</CustomButton>
       <CustomButton asChild>
-        <Link href='/about'>Посилання</Link>
+        <Link href="/about">Посилання</Link>
       </CustomButton>
       {/* <ul className="list-disc pl-5 space-y-2 text-gray-700">
         {products.map(({ id, title }) => (

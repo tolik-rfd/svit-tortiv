@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { CustomButton } from "./customButton";
+import { CustomButton } from "./custom-button";
 
 const meta: Meta<typeof CustomButton> = {
   component: CustomButton,

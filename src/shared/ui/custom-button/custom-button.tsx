@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { BaseButtonProps } from "../baseButton";
-import styles from "./customButton.module.css";
+import { BaseButtonProps } from "../base-button";
+import styles from "./custom-button.module.css";
 import { cn } from "@/shared/lib/utils";
-import { BaseButton } from "../baseButton";
+import { BaseButton } from "../base-button";
 
 interface CustomButtonProps extends BaseButtonProps {
   variant?: "contained" | "outlined" | "text";
