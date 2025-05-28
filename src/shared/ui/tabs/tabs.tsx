@@ -76,7 +76,7 @@ const tabsTriggerVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-custom-cofe text-base text-dark font-normal px-custom-18 py-4 uppercase rounded-custom-80 sm:text-xl sm:px-10 sm:py-custom-18 data-[state=active]:bg-dark data-[state=active]:text-white",
+          "bg-custom-cofe text-base text-dark font-normal px-custom-18 py-4 uppercase rounded-custom-80 sm:text-xl sm:px-10 sm:py-custom-18 data-[state=active]:bg-custom-dark data-[state=active]:text-white",
         secondary:
           "text-custom-light-gray text-base font-medium data-[state=active]:text-black sm:text-2xl ",
       },
