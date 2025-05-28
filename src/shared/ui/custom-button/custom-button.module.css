@@ -1,0 +1,132 @@
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  border-radius: 60px;
+  font-family: "Manrope", sans-serif;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.size-xs {
+  font-size: 14px;
+  padding: 13px 66px;
+}
+
+.size-sm {
+  font-size: 14px;
+  padding: 16px 103px;
+}
+
+.size-md {
+  font-size: 16px;
+  padding: 21px 103px;
+}
+
+.size-lg {
+  font-size: 18px;
+  padding: 24px 96px;
+}
+
+.text {
+  padding: 5px;
+  color: var(--dark);
+}
+
+.text:hover {
+  color: var(--custom-orange);
+}
+
+.color-orange {
+}
+.color-gray {
+}
+.color-dark {
+}
+
+.contained {
+}
+
+.contained.color-orange {
+  background-color: var(--custom-orange);
+}
+
+.contained.color-orange:hover,
+.contained.color-orange:active {
+  background-color: var(--dark);
+}
+
+.contained.color-orange:disabled,
+.contained.color-dark:disabled,
+.contained.color-gray:disabled,
+.outlined.color-orange:disabled,
+.outlined.color-dark:disabled,
+.outlined.color-gray:disabled,
+.text:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.contained.color-dark {
+  background-color: var(--dark);
+}
+
+.contained.color-dark:hover,
+.contained.color-dark:active {
+  background-color: var(--custom-orange);
+}
+
+.contained.color-gray,
+.contained.color-gray:active {
+  color: var(--dark);
+  background-color: var(--custom-gray);
+}
+
+.contained.color-gray:hover {
+  background-color: var(--custom-cofe);
+}
+
+.outlined {
+  background-color: white;
+}
+
+.outlined.color-dark {
+  color: var(--dark);
+  border: 1px solid var(--dark);
+}
+
+.outlined.color-dark:hover,
+.outlined.color-dark:active {
+  color: white;
+  background-color: var(--dark);
+}
+
+.outlined.color-gray {
+  color: var(--dark);
+  border: 1px solid var(--custom-gray);
+}
+
+.outlined.color-gray:hover {
+  border: 1px solid var(--custom-orange);
+}
+.outlined.color-gray:active {
+  color: white;
+  background-color: var(--custom-orange);
+}
+
+.outlined.color-orange {
+  color: var(--dark);
+  border: 1px solid var(--custom-orange);
+}
+
+.outlined.color-orange:hover,
+.outlined.color-orange:active {
+  color: white;
+  background-color: var(--custom-orange);
+}
