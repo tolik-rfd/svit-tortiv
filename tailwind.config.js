@@ -44,6 +44,7 @@ module.exports = {
         "custom-light-gray": "var(--color-custom-light-gray)",
         "custom-gray": "var(--color-custom-gray)",
         "custom-dark": "var(--color-custom-dark)",
+        "custom-chocolate": "var(--color-custom-chocolate)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
