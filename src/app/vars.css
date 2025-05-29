@@ -1,13 +1,58 @@
 :root {
-  --custom-orange: #e1780e;
-  --custom-tiffany: #a0d8e1;
-  --custom-blue: #15a6e5;
-  --custom-lilac: #dfc6ff;
-  --custom-cofe: #e2d7cf;
-  --custom-peach: #ffc9b1;
-  --custom-yellow: #ffe55a;
-  --custom-light: #f9fef6;
-  --custom-light-gray: #d9d9d9;
-  --custom-gray: #e5ded9;
-  --dark: #331207;
+  /* Colors */
+  --color-custom-orange: #e1780e;
+  --color-custom-tiffany: #a0d8e1;
+  --color-custom-blue: #15a6e5;
+  --color-custom-lilac: #dfc6ff;
+  --color-custom-cofe: #e2d7cf;
+  --color-custom-peach: #ffc9b1;
+  --color-custom-yellow: #ffe55a;
+  --color-custom-light: #f9fef6;
+  --color-custom-light-gray: #d9d9d9;
+  --color-custom-gray: #e5ded9;
+  --color-custom-dark: #331207;
+  --color-custom-chocolate: #83491d;
+  /* ////////////////////// */
+
+  /* Spaces */
+  --space-custom-10: 0.625rem;
+  --space-custom-18: 1.125rem;
+  /* ////////////////////// */
+
+  /* Font*/
+  --font-e-ukraine: "e-Ukraine", sans-serif;
+  --font-manrope: "Manrope", sans-serif;
+
+  /* ////////////////////// */
+
+  /* Font Size*/
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-title-sm: 2.5rem; /* 40px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 3.75rem; /* 60px */
+  --font-size-title-lg: 5.375rem; /* 86px */
+
+  /* ////////////////////// */
+
+  /* Line Height */
+  --line-height-base: 1.4;
+  --line-height-custom-16: 1rem;
+  /* ////////////////////// */
+
+  /* Screens */
+  --screen-xs-custom: 360px;
+  --screen-xl-custom: 1440px;
+  /* ////////////////////// */
+
+  /* Border Radius */
+  --border-radius-custom-24: 1.5rem;
+  --border-radius-custom-32: 2rem;
+  --border-radius-custom-50: 3.125rem;
+  --border-radius-custom-80: 5rem;
+  /* ////////////////////// */
 }
