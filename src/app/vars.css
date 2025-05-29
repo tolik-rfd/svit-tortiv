@@ -11,7 +11,7 @@
   --color-custom-light-gray: #d9d9d9;
   --color-custom-gray: #e5ded9;
   --color-custom-dark: #331207;
-  --color-custom-chocolate: #83491D;
+  --color-custom-chocolate: #83491d;
   /* ////////////////////// */
 
   /* Spaces */
@@ -19,24 +19,24 @@
   --space-custom-18: 1.125rem;
   /* ////////////////////// */
 
-
   /* Font*/
-  --font-e-ukraine: 'e-Ukraine', sans-serif;
-  --font-manrope: 'Manrope', sans-serif;
+  --font-e-ukraine: "e-Ukraine", sans-serif;
+  --font-manrope: "Manrope", sans-serif;
 
   /* ////////////////////// */
 
   /* Font Size*/
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-title-sm: 2.5rem;
-  --font-size-5xl: 3rem;
-  --font-size-6xl: 3.75rem;
-  --font-size-title-lg: 5.375rem;
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-title-sm: 2.5rem; /* 40px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 3.75rem; /* 60px */
+  --font-size-title-lg: 5.375rem; /* 86px */
+
   /* ////////////////////// */
 
   /* Line Height */
@@ -55,5 +55,4 @@
   --border-radius-custom-50: 3.125rem;
   --border-radius-custom-80: 5rem;
   /* ////////////////////// */
-
 }
