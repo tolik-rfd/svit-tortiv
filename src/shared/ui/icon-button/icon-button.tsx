@@ -4,7 +4,7 @@ import { cn } from "@/shared/lib/utils";
 import { BaseButton, type BaseButtonProps } from "../base-button";
 
 const iconButtonVariants = cva(
-  "inline-flex items-center justify-center p-1.5 rounded-[50%] transition-all",
+  "inline-flex items-center justify-center p-1.5 rounded-[50%] transition-all disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -20,17 +20,23 @@ const iconButtonVariants = cva(
 
 export interface IconButtonProps
   extends BaseButtonProps,
-    VariantProps<typeof iconButtonVariants> {}
+    VariantProps<typeof iconButtonVariants> {
+  variant?: "default" | "solid";
+  children: React.ReactNode;
+}
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ className, variant, ...props }, ref) => {
+  ({ className, variant, children, ...rest }, ref) => {
     return (
       <BaseButton
         ref={ref}
         className={cn(iconButtonVariants({ variant }), className)}
-        {...props}
-      />
+        {...rest}
+      >
+        {children}
+      </BaseButton>
     );
   }
 );
+
 IconButton.displayName = "IconButton";
