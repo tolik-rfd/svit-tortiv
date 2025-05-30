@@ -36,30 +36,28 @@
 
 .text {
   padding: 5px;
-  color: var(--dark);
+  color: var(--color-custom-dark);
 }
 
 .text:hover {
-  color: var(--custom-orange);
+  color: var(--color-custom-orange);
 }
 
-.color-orange {
-}
-.color-gray {
-}
-.color-dark {
-}
+.color-orange {}
 
-.contained {
-}
+.color-gray {}
+
+.color-dark {}
+
+.contained {}
 
 .contained.color-orange {
-  background-color: var(--custom-orange);
+  background-color: var(--color-custom-orange);
 }
 
 .contained.color-orange:hover,
 .contained.color-orange:active {
-  background-color: var(--dark);
+  background-color: var(--color-custom-dark);
 }
 
 .contained.color-orange:disabled,
@@ -74,22 +72,22 @@
 }
 
 .contained.color-dark {
-  background-color: var(--dark);
+  background-color: var(--color-custom-dark);
 }
 
 .contained.color-dark:hover,
 .contained.color-dark:active {
-  background-color: var(--custom-orange);
+  background-color: var(--color-custom-orange);
 }
 
 .contained.color-gray,
 .contained.color-gray:active {
-  color: var(--dark);
-  background-color: var(--custom-gray);
+  color: var(--color-custom-dark);
+  background-color: var(--color-custom-gray);
 }
 
 .contained.color-gray:hover {
-  background-color: var(--custom-cofe);
+  background-color: var(--color-custom-cofe);
 }
 
 .outlined {
@@ -97,36 +95,37 @@
 }
 
 .outlined.color-dark {
-  color: var(--dark);
-  border: 1px solid var(--dark);
+  color: var(--color-custom-dark);
+  border: 1px solid var(--color-custom-dark);
 }
 
 .outlined.color-dark:hover,
 .outlined.color-dark:active {
   color: white;
-  background-color: var(--dark);
+  background-color: var(--color-custom-dark);
 }
 
 .outlined.color-gray {
-  color: var(--dark);
-  border: 1px solid var(--custom-gray);
+  color: var(--color-custom-dark);
+  border: 1px solid var(--color-custom-gray);
 }
 
 .outlined.color-gray:hover {
-  border: 1px solid var(--custom-orange);
+  border: 1px solid var(--color-custom-orange);
 }
+
 .outlined.color-gray:active {
   color: white;
-  background-color: var(--custom-orange);
+  background-color: var(--color-custom-orange);
 }
 
 .outlined.color-orange {
-  color: var(--dark);
-  border: 1px solid var(--custom-orange);
+  color: var(--color-custom-dark);
+  border: 1px solid var(--color-custom-orange);
 }
 
 .outlined.color-orange:hover,
 .outlined.color-orange:active {
   color: white;
-  background-color: var(--custom-orange);
+  background-color: var(--color-custom-orange);
 }
