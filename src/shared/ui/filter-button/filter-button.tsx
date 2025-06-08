@@ -5,7 +5,7 @@ import { BaseButton, type BaseButtonProps } from "../base-button";
 import { CloseIcon } from "@/shared/assets/icons/close-icon";
 
 const filterButtonVariants = cva(
-  "inline-flex items-center justify-center p-3 pr-2 rounded-[100px] transition-all disabled:opacity-50 border gap-3",
+  "inline-flex items-center justify-center pl-3 pr-2 py-[8px] rounded-[100px] transition-all disabled:opacity-50 border gap-3 text-sm h-[40px]",
   {
     variants: {
       color: {
