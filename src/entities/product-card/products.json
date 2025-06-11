@@ -1,0 +1,25 @@
+[
+  {
+    "id": "1",
+    "author": {
+      "photo": "./photos/photo-1.png",
+      "name": "Natali@Cake",
+      "location": "м. Київ"
+    },
+    "product": {
+      "title": "Шварцвальдський вишневий торт",
+      "image": "./images/image-1.png",
+      "weights": [
+        { "value": 2, "price": 400 },
+        { "value": 4, "price": 780 },
+        { "value": 5, "price": 950 },
+        { "value": 8, "price": 1500 }
+      ],
+      "selectedWeight": 2,
+      "liked": false,
+      "sale": false,
+      "delivery": true,
+      "cooking-time": "3"
+    }
+  }
+]
