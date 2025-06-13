@@ -36,6 +36,7 @@
   --font-manrope: var(--font-manrope);
 
   /* Custom Colors */
+  --color-custom-background: var(--color-custom-background);
   --color-custom-orange: var(--color-custom-orange);
   --color-custom-tiffany: var(--color-custom-tiffany);
   --color-custom-blue: var(--color-custom-blue);
@@ -93,6 +94,7 @@
   --radius: 0.625rem;
 
   /* Color Palette */
+  --color-custom-background: #fcf7f4;
   --color-custom-orange: #e1780e;
   --color-custom-tiffany: #a0d8e1;
   --color-custom-blue: #15a6e5;
@@ -198,6 +200,10 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: 16px;
   }
   body {
     @apply bg-custom-cofe;
