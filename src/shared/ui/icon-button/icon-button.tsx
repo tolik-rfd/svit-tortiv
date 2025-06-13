@@ -1,22 +1,20 @@
 import * as React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/shared/lib/utils";
+import { tv, type VariantProps } from "tailwind-variants";
 import { BaseButton, type BaseButtonProps } from "../base-button";
 
-const iconButtonVariants = cva(
-  "inline-flex items-center justify-center p-1.5 rounded-[50%] transition-all disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        default: "hover:bg-custom-gray",
-        solid: "hover:opacity-50",
-      },
+const iconButtonVariants = tv({
+  base: "inline-flex cursor-pointer items-center justify-center rounded-[50%] p-1.5 transition-all disabled:opacity-50",
+
+  variants: {
+    variant: {
+      default: "hover:bg-custom-gray",
+      solid: "hover:opacity-50",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
 
 export interface IconButtonProps
   extends BaseButtonProps,
@@ -30,13 +28,13 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     return (
       <BaseButton
         ref={ref}
-        className={cn(iconButtonVariants({ variant }), className)}
+        className={iconButtonVariants({ variant, className })}
         {...rest}
       >
         {children}
       </BaseButton>
     );
-  }
+  },
 );
 
 IconButton.displayName = "IconButton";

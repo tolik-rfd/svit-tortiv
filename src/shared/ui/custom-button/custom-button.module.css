@@ -12,6 +12,7 @@
   font-weight: 600;
   transition: all 0.3s;
   outline: none;
+  cursor: pointer;
 }
 
 .size-xs {
@@ -43,13 +44,17 @@
   color: var(--color-custom-orange);
 }
 
-.color-orange {}
+.color-orange {
+}
 
-.color-gray {}
+.color-gray {
+}
 
-.color-dark {}
+.color-dark {
+}
 
-.contained {}
+.contained {
+}
 
 .contained.color-orange {
   background-color: var(--color-custom-orange);

@@ -1,24 +1,23 @@
 import * as React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/lib/utils";
 import { BaseButton, type BaseButtonProps } from "../base-button";
 import { CloseIcon } from "@/shared/assets/icons/close-icon";
+import { VariantProps, tv } from "tailwind-variants";
 
-const filterButtonVariants = cva(
-  "inline-flex items-center justify-center px-3 py-2 rounded-[100px] transition-all disabled:opacity-50 border gap-3 text-sm h-[40px]",
-  {
-    variants: {
-      color: {
-        coral: "border-custom-coral text-custom-coral hover:bg-[#f8e3df]",
-        ocean: "border-custom-ocean text-custom-ocean hover:bg-custom-tiffany",
-      },
-    },
+const filterButtonVariants = tv({
+  base: "inline-flex h-[40px] cursor-pointer items-center justify-center gap-3 rounded-[100px] border px-3 py-2 text-sm transition-all disabled:opacity-50",
 
-    defaultVariants: {
-      color: "coral",
+  variants: {
+    color: {
+      coral: "border-custom-coral text-custom-coral hover:bg-[#f8e3df]",
+      ocean: "border-custom-ocean text-custom-ocean hover:bg-custom-tiffany",
     },
-  }
-);
+  },
+
+  defaultVariants: {
+    color: "coral",
+  },
+});
 
 export interface FilterButtonProps
   extends Omit<BaseButtonProps, "color">,
@@ -33,7 +32,7 @@ export const FilterButton = React.forwardRef<
   return (
     <BaseButton
       ref={ref}
-      className={cn(filterButtonVariants({ color }), className)}
+      className={filterButtonVariants({ color, className })}
       {...rest}
     >
       {children}

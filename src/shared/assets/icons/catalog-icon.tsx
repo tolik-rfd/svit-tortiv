@@ -1,84 +1,85 @@
-import React from 'react';
+import React from "react";
 
-export const CatalogIcon: React.FC = () => (
+export const CatalogIcon: React.FC = (props) => (
   <svg
-    width='25'
-    height='25'
-    viewBox='0 0 25 25'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
+    width="25"
+    height="25"
+    viewBox="0 0 25 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <rect
-      x='3.5'
-      y='3.5'
-      width='4.73684'
-      height='4.73684'
-      rx='1'
-      fill='white'
+      x="3.5"
+      y="3.5"
+      width="4.73684"
+      height="4.73684"
+      rx="1"
+      fill="currentColor"
     />
     <rect
-      x='3.5'
-      y='10.1318'
-      width='4.73684'
-      height='4.73684'
-      rx='1'
-      fill='white'
+      x="3.5"
+      y="10.1318"
+      width="4.73684"
+      height="4.73684"
+      rx="1"
+      fill="currentColor"
     />
     <rect
-      x='3.5'
-      y='16.7627'
-      width='4.73684'
-      height='4.73684'
-      rx='1'
-      fill='white'
+      x="3.5"
+      y="16.7627"
+      width="4.73684"
+      height="4.73684"
+      rx="1"
+      fill="currentColor"
     />
     <rect
-      x='10.1318'
-      y='3.5'
-      width='4.73684'
-      height='4.73684'
-      rx='1'
-      fill='white'
+      x="10.1318"
+      y="3.5"
+      width="4.73684"
+      height="4.73684"
+      rx="1"
+      fill="currentColor"
     />
     <rect
-      x='10.1318'
-      y='10.1318'
-      width='4.73684'
-      height='4.73684'
-      rx='1'
-      fill='white'
+      x="10.1318"
+      y="10.1318"
+      width="4.73684"
+      height="4.73684"
+      rx="1"
+      fill="currentColor"
     />
     <rect
-      x='10.1318'
-      y='16.7627'
-      width='4.73684'
-      height='4.73684'
-      rx='1'
-      fill='white'
+      x="10.1318"
+      y="16.7627"
+      width="4.73684"
+      height="4.73684"
+      rx="1"
+      fill="currentColor"
     />
     <rect
-      x='16.7627'
-      y='3.5'
-      width='4.73684'
-      height='4.73684'
-      rx='1'
-      fill='white'
+      x="16.7627"
+      y="3.5"
+      width="4.73684"
+      height="4.73684"
+      rx="1"
+      fill="currentColor"
     />
     <rect
-      x='16.7627'
-      y='10.1318'
-      width='4.73684'
-      height='4.73684'
-      rx='1'
-      fill='white'
+      x="16.7627"
+      y="10.1318"
+      width="4.73684"
+      height="4.73684"
+      rx="1"
+      fill="currentColor"
     />
     <rect
-      x='16.7627'
-      y='16.7627'
-      width='4.73684'
-      height='4.73684'
-      rx='1'
-      fill='white'
+      x="16.7627"
+      y="16.7627"
+      width="4.73684"
+      height="4.73684"
+      rx="1"
+      fill="currentColor"
     />
   </svg>
 );
