@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Smile } from "lucide-react";
 import {
   MobileNavbar,
   MobileNavbarIcon,
@@ -9,6 +10,9 @@ import {
 } from "./mobile-navbar";
 import { CatalogIcon } from "@/shared/assets/icons/catalog-icon";
 import { HeartIcon } from "@/shared/assets/icons/heart-icon";
+import { CartIcon } from "@/shared/assets/icons/cart-icon";
+import { MessageIcon } from "@/shared/assets/icons/message-icon";
+
 const NAVBAR_ITEMS: MobileNavbarItem[] = [
   {
     value: "catalog",
@@ -23,23 +27,24 @@ const NAVBAR_ITEMS: MobileNavbarItem[] = [
     href: "/favorites",
     icon: <HeartIcon />,
   },
+
   {
-    value: "orders",
-    label: "Кошик",
-    href: "/orders",
-    icon: <CatalogIcon />,
+    value: "chat",
+    label: "Чат",
+    href: "/chat",
+    icon: <MessageIcon />,
   },
   {
     value: "profile",
     label: "Профіль",
     href: "/profile",
-    icon: <CatalogIcon />,
+    icon: <Smile />,
   },
   {
-    value: "chat",
-    label: "Чат",
-    href: "/chat",
-    icon: <CatalogIcon />,
+    value: "orders",
+    label: "Кошик",
+    href: "/orders",
+    icon: <CartIcon />,
   },
 ];
 const meta = {
