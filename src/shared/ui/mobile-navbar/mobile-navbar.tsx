@@ -10,7 +10,7 @@ import { useMobileNavbar } from "./use-mobile-navbar";
 const styles = tv({
   slots: {
     navbar:
-      "flex h-16 w-full items-center rounded-[0.375rem] bg-custom-cofe px-3",
+      "flex h-16 w-full items-center overflow-x-clip rounded-[0.375rem] bg-custom-cofe px-3",
     panel: "relative flex w-full",
     trigger:
       " relative flex h-11 w-15.5 flex-auto cursor-pointer items-end justify-center text-xs font-medium uppercase ",
