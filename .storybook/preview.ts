@@ -1,13 +1,8 @@
 import type { Preview } from "@storybook/nextjs-vite";
-import React from "react";
-import { INITIAL_VIEWPORTS } from "storybook/viewport";
 import "../src/app/globals.css";
 
 const preview: Preview = {
   parameters: {
-    viewport: {
-      options: INITIAL_VIEWPORTS,
-    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

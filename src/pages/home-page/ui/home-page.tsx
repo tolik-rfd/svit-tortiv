@@ -8,13 +8,13 @@ export default async function HomePage() {
   // const products = await productsService.getProducts();
 
   return (
-    <div className="bg-custom-cofe min-h-screen">
-      <h2 className="text-white text-title-sm">Hello World!</h2>
+    <div className="min-h-screen bg-custom-cofe">
+      <h2 className="text-title-sm text-white">Hello World!</h2>
       <CustomButton>Дивитися всі</CustomButton>
       <CustomButton asChild>
         <Link href="/about">Посилання</Link>
       </CustomButton>
-
+      fghfh
       <IconButton variant="solid" asChild>
         <Link href="#">
           <InstagramIcon />
