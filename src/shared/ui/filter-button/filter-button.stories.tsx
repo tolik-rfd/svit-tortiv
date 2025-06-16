@@ -10,6 +10,7 @@ const meta: Meta<typeof FilterButton> = {
   argTypes: {
     color: {
       control: { type: "radio" },
+      options: ["coral", "ocean"],
     },
   },
 };

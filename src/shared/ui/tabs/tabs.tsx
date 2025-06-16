@@ -3,9 +3,8 @@
 import { ComponentPropsWithoutRef, ComponentRef, forwardRef } from "react";
 import { Content, List, Root, Trigger } from "@radix-ui/react-tabs";
 
-import { cn } from "@/shared/lib/utils";
 import { createContext } from "@/shared/hooks/context";
-import { VariantProps, cva } from "class-variance-authority";
+import { VariantProps, tv } from "tailwind-variants";
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 type TabsContextValue = Pick<TabsProps, "variant">;
@@ -37,11 +36,12 @@ Tabs.displayName = List.displayName;
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-const tabsListVariants = cva("inline-flex leading-none", {
+const tabsListVariants = tv({
+  base: "inline-flex leading-none",
   variants: {
     variant: {
-      primary: "bg-custom-cofe p-1 rounded-custom-50",
-      secondary: "p-2 gap-6 sm:p-custom-10 sm:gap-6",
+      primary: "rounded-custom-50 bg-custom-cofe p-1",
+      secondary: "gap-6 p-2 sm:gap-6 sm:p-custom-10",
     },
   },
   defaultVariants: {
@@ -61,31 +61,30 @@ const TabsList = forwardRef<ComponentRef<typeof List>, TabsListProps>(
     return (
       <List
         ref={ref}
-        className={cn(tabsListVariants({ variant, className }))}
+        className={tabsListVariants({ variant, className })}
         {...rest}
       />
     );
-  }
+  },
 );
 TabsList.displayName = List.displayName;
 
 ////////////////////////////////////////////////////////////////////////////////////
-const tabsTriggerVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        primary:
-          "bg-custom-cofe text-base text-dark font-normal px-custom-18 py-4 uppercase rounded-custom-80 sm:text-xl sm:px-10 sm:py-custom-18 data-[state=active]:bg-custom-dark data-[state=active]:text-white",
-        secondary:
-          "text-custom-light-gray text-base font-medium data-[state=active]:text-black sm:text-2xl ",
-      },
+const tabsTriggerVariants = tv({
+  base: "inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50",
+
+  variants: {
+    variant: {
+      primary:
+        "text-dark rounded-custom-80 bg-custom-cofe px-custom-18 py-4 text-base font-normal uppercase data-[state=active]:bg-custom-dark data-[state=active]:text-white sm:px-10 sm:py-custom-18 sm:text-xl",
+      secondary:
+        "text-base font-medium text-custom-light-gray data-[state=active]:text-black sm:text-2xl ",
     },
-    defaultVariants: {
-      variant: "primary",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "primary",
+  },
+});
 
 interface TabsTriggerProps
   extends ComponentPropsWithoutRef<typeof Trigger>,
@@ -99,22 +98,23 @@ const TabsTrigger = forwardRef<ComponentRef<typeof Trigger>, TabsTriggerProps>(
     return (
       <Trigger
         ref={ref}
-        className={cn(tabsTriggerVariants({ variant, className }))}
+        className={tabsTriggerVariants({ variant, className })}
         {...rest}
       />
     );
-  }
+  },
 );
 TabsTrigger.displayName = Trigger.displayName;
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-const tabsContentVariants = cva("", {
+const tabsContentVariants = tv({
+  base: "",
   variants: {
     variant: {
       primary:
-        "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-      secondary: "text-sm px-2 mt-custom-10 font-light sm:text-xl",
+        "mt-2 ring-offset-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none",
+      secondary: "mt-custom-10 px-2 text-sm font-light sm:text-xl",
     },
   },
   defaultVariants: {
@@ -132,7 +132,7 @@ const TabsContent = forwardRef<
   return (
     <Content
       ref={ref}
-      className={cn(tabsContentVariants({ variant, className }))}
+      className={tabsContentVariants({ variant, className })}
       {...rest}
     />
   );
