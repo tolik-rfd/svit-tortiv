@@ -2,11 +2,11 @@ import React from "react";
 import { Product } from "../product-list/types/product";
 import Image from "next/image";
 import { IconButton } from "@/shared/ui/icon-button";
-// import { LikeIcon } from "@/shared/assets/icons/like-icon";
+import { LikeIcon } from "@/shared/assets/icons/like-icon";
 import { CustomButton } from "@/shared/ui/custom-button";
 import classNames from "classnames";
-import { HeartIcon } from "@/shared/assets/icons/heart-icon";
-// import { FlameIcon } from "@/shared/assets/icons/flame-icon";
+// import { HeartIcon } from "@/shared/assets/icons/heart-icon";
+import { FlameIcon } from "@/shared/assets/icons/flame-icon";
 
 type Props = {
   product: Product;
@@ -47,11 +47,11 @@ export const ProductCard = ({ product }: Props) => {
               product.isFavorite && "text-black",
             )}
           >
-            <HeartIcon />
+            <LikeIcon />
           </IconButton>
 
           {product.sale?.isActive && (
-            <HeartIcon className="absolute top-[8px] left-[12px] h-9 w-9" />
+            <FlameIcon className="absolute top-[8px] left-[12px] h-9 w-9" />
           )}
         </div>
 
