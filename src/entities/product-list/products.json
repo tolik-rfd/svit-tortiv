@@ -1,0 +1,111 @@
+[
+  {
+    "id": "1",
+    "name": "Шварцвальдський вишневий торт",
+    "imageUrl": "/images/image-1.png",
+    "isFavorite": false,
+    "sale": {
+      "isActive": true,
+      "salePercent": 25
+    },
+    "seller": {
+      "id": "1",
+      "name": "Natali@Cake",
+      "location": "м. Київ",
+      "avatarUrl": "/photos/photo-1.png"
+    },
+    "weights": [
+      {
+        "id": "1",
+        "value": 2,
+        "unit": "кг",
+        "price": 400,
+        "currency": "₴",
+        "available": true
+      },
+      {
+        "id": "2",
+        "value": 4,
+        "unit": "кг",
+        "price": 780,
+        "currency": "₴",
+        "available": true
+      },
+      {
+        "id": "3",
+        "value": 5,
+        "unit": "кг",
+        "price": 950,
+        "currency": "₴",
+        "available": true
+      },
+      {
+        "id": "4",
+        "value": 8,
+        "unit": "кг",
+        "price": 1500,
+        "currency": "₴",
+        "available": true
+      }
+    ],
+    "delivery": {
+      "timeDays": 3,
+      "cost": 600,
+      "unit": "₴"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Шварцвальдський вишневий торт",
+    "imageUrl": "/images/image-1.png",
+    "isFavorite": true,
+    "sale": {
+      "isActive": false
+    },
+    "seller": {
+      "id": "1",
+      "name": "Natali@Cake",
+      "location": "м. Київ",
+      "avatarUrl": "/photos/photo-1.png"
+    },
+    "weights": [
+      {
+        "id": "1",
+        "value": 2,
+        "unit": "кг",
+        "price": 400,
+        "currency": "₴",
+        "available": true
+      },
+      {
+        "id": "2",
+        "value": 4,
+        "unit": "кг",
+        "price": 780,
+        "currency": "₴",
+        "available": true
+      },
+      {
+        "id": "3",
+        "value": 5,
+        "unit": "кг",
+        "price": 950,
+        "currency": "₴",
+        "available": true
+      },
+      {
+        "id": "4",
+        "value": 8,
+        "unit": "кг",
+        "price": 1500,
+        "currency": "₴",
+        "available": true
+      }
+    ],
+    "delivery": {
+      "timeDays": 3,
+      "cost": 600,
+      "unit": "₴"
+    }
+  }
+]
