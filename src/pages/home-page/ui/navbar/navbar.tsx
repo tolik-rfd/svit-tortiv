@@ -7,21 +7,28 @@ import { tv } from "tailwind-variants";
 import logoXSVertical from "@/shared/assets/images/logo/logo-xs-vertical.svg";
 
 import logoMDHorizontal from "@/shared/assets/images/logo/logo-md-horizontal.svg";
+
 import { SearchIcon } from "@/shared/assets/icons/search-icon";
 
 import { SmartLink } from "@/shared/ui/smart-link";
 import { LocationIcon } from "@/shared/assets/icons/location-icon";
 import { Tabs, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
+import { CustomButton } from "@/shared/ui/custom-button";
+import { CatalogIcon } from "@/shared/assets/icons/catalog-icon";
+import { HeartIcon } from "lucide-react";
+import { CartIcon } from "@/shared/assets/icons/cart-icon";
 
 const navbarStyles = tv({
   slots: {
-    root: "flex items-center justify-between px-3 py-2 text-custom-dark ",
-    logo: "order-1 text-xl font-bold",
-    location: "order-3 text-sm",
-    catalogButton: "hidden rounded bg-blue-600 px-4 py-2 hover:bg-blue-700",
-    searchBar: "order-2",
-    actions: "hidden",
-    languageSwitcher: "order-4 text-sm",
+    root: "items-center justify-between px-3 py-2 text-custom-dark",
+    logo: " text-xl font-bold",
+    location: " text-sm ",
+    catalogButton: "hidden lg:block",
+    searchBar: "",
+    actions: "",
+    languageSwitcher: "text-sm ",
+    mobile: "flex lg:hidden",
+    desktop: "hidden lg:flex",
   },
 });
 
@@ -33,6 +40,8 @@ const {
   searchBar,
   actions,
   languageSwitcher,
+  mobile,
+  desktop,
 } = navbarStyles();
 
 interface NavbarProps {}
@@ -40,20 +49,51 @@ interface NavbarProps {}
 export const Navbar: FC<NavbarProps> = (props) => {
   const {} = props;
   return (
-    <div className={root()}>
+    <>
+      <Mobile />
+      <Desktop />
+    </>
+  );
+};
+
+///////////////////////////////////////
+const Mobile = () => {
+  return (
+    <div className={root({ className: mobile() })}>
       <div className={logo()}>
         <Logo />
       </div>
       <div className={location()}>
         <Location />
       </div>
-      <div className={catalogButton()}>catalog button</div>
-      <div className={searchBar()}>
+      <div className={catalogButton()}>
+        <CatalogButton />
+      </div>
+      <div>
         <SearchBar />
       </div>
-      <div className={actions()}>actions</div>
       <div className={languageSwitcher()}>
         <LanguageSwitcher />
+      </div>
+    </div>
+  );
+};
+
+///////////////////
+const Desktop = () => {
+  return (
+    <div className={root({ className: desktop() })}>
+      <div className={logo()}>
+        <Logo />
+      </div>
+      <div className={location()}>
+        <Location />
+      </div>
+      <div className={catalogButton()}>
+        <CatalogButton />
+      </div>
+      <div>
+        <Actions />
       </div>
     </div>
   );
@@ -64,8 +104,8 @@ export const Navbar: FC<NavbarProps> = (props) => {
 const Logo = () => {
   return (
     <SmartLink href={"/"}>
-      <Image src={logoXSVertical} alt="Logo" className="md:hidden" />
-      <Image src={logoMDHorizontal} alt="Logo" className="hidden md:block" />
+      <Image src={logoXSVertical} alt="Logo" className="lg:hidden" />
+      <Image src={logoMDHorizontal} alt="Logo" className="hidden lg:block" />
     </SmartLink>
   );
 };
@@ -75,7 +115,36 @@ const SearchBar = () => {
 };
 
 const Location = () => {
-  return <LocationIcon />;
+  return (
+    <div className="flex gap-1">
+      <LocationIcon /> <span className="hidden lg:block">Київ</span>
+    </div>
+  );
+};
+/////////////////////////////////////
+
+const CatalogButton = () => {
+  return (
+    <CustomButton style={{ padding: "12px 20px" }} color="dark">
+      <CatalogIcon width={18} height={18} /> Каталог
+    </CustomButton>
+  );
+};
+
+/////////////////////////////////////
+
+const Actions = () => {
+  return (
+    <div className="flex items-center justify-between gap-8">
+      <SearchBar />
+      <CustomButton style={{ padding: "12px 20px" }}>
+        Вхід | Реєстрація
+      </CustomButton>
+      <HeartIcon />
+      <CartIcon />
+      <LanguageSwitcher />
+    </div>
+  );
 };
 
 //////////////////////////////////
