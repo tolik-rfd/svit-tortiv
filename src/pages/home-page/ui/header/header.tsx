@@ -6,10 +6,8 @@ interface HeaderProps {}
 export const Header: FC<HeaderProps> = (props) => {
   const {} = props;
   return (
-    <header>
+    <header style={{ display: "unset" }}>
       <Navbar />
-      <div>Tabs</div>
-      <div>Mobile Navbar</div>
     </header>
   );
 };

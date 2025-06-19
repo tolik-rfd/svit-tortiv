@@ -20,7 +20,8 @@ import { CartIcon } from "@/shared/assets/icons/cart-icon";
 
 const navbarStyles = tv({
   slots: {
-    root: "items-center justify-between px-3 py-2 text-custom-dark",
+    // wrapper: "sticky top-0 z-50",
+    root: "sticky top-0 z-50 items-center justify-between bg-custom-cofe px-3 py-2 text-custom-dark",
     logo: " text-xl font-bold",
     location: " text-sm ",
     catalogButton: "hidden lg:block",
@@ -33,6 +34,7 @@ const navbarStyles = tv({
 });
 
 const {
+  // wrapper,
   root,
   logo,
   location,
@@ -49,10 +51,13 @@ interface NavbarProps {}
 export const Navbar: FC<NavbarProps> = (props) => {
   const {} = props;
   return (
+    // <div className={wrapper()}>
     <>
       <Mobile />
       <Desktop />
     </>
+
+    // </div>
   );
 };
 

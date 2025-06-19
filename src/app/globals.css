@@ -201,5 +201,6 @@
   }
   body {
     @apply bg-custom-cofe;
+    @apply min-h-screen;
   }
 }

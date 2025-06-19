@@ -8,7 +8,7 @@ export default async function HomePage() {
   // const products = await productsService.getProducts();
 
   return (
-    <div className="min-h-screen bg-custom-cofe">
+    <div className="bg-custom-cofe">
       <h2 className="text-title-sm text-white">Hello World!</h2>
       <CustomButton>Дивитися всі</CustomButton>
       <CustomButton asChild>
@@ -20,11 +20,143 @@ export default async function HomePage() {
           <InstagramIcon />
         </Link>
       </IconButton>
-      {/* <ul className="list-disc pl-5 space-y-2 text-gray-700">
-        {products.map(({ id, title }) => (
-          <li key={id}>{title}</li>
-        ))}
-      </ul> */}
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequuntur officiis vel tempora provident
+      voluptatum eveniet, reiciendis magnam eligendi hic, qui animi. Qui
+      excepturi dolorum error. Magnam ipsam ad voluptate distinctio. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Consequuntur officiis vel
+      tempora provident voluptatum eveniet, reiciendis magnam eligendi hic, qui
+      animi. Qui excepturi dolorum error. Magnam ipsam ad voluptate distinctio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      officiis vel tempora provident voluptatum eveniet, reiciendis magnam
+      eligendi hic, qui animi. Qui excepturi dolorum error. Magnam ipsam ad
+      voluptate distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Consequuntur officiis vel tempora provident voluptatum eveniet,
+      reiciendis magnam eligendi hic, qui animi. Qui excepturi dolorum error.
+      Magnam ipsam ad voluptate distinctio.
     </div>
   );
 }
