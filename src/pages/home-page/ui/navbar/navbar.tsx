@@ -11,10 +11,11 @@ import { SearchIcon } from "@/shared/assets/icons/search-icon";
 
 import { SmartLink } from "@/shared/ui/smart-link";
 import { LocationIcon } from "@/shared/assets/icons/location-icon";
+import { Tabs, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 
 const navbarStyles = tv({
   slots: {
-    root: "flex items-center justify-between  bg-white  px-3 py-2 text-custom-dark ",
+    root: "flex items-center justify-between px-3 py-2 text-custom-dark ",
     logo: "order-1 text-xl font-bold",
     location: "order-3 text-sm",
     catalogButton: "hidden rounded bg-blue-600 px-4 py-2 hover:bg-blue-700",
@@ -51,7 +52,9 @@ export const Navbar: FC<NavbarProps> = (props) => {
         <SearchBar />
       </div>
       <div className={actions()}>actions</div>
-      <div className={languageSwitcher()}>language switcher</div>
+      <div className={languageSwitcher()}>
+        <LanguageSwitcher />
+      </div>
     </div>
   );
 };
@@ -73,4 +76,32 @@ const SearchBar = () => {
 
 const Location = () => {
   return <LocationIcon />;
+};
+
+//////////////////////////////////
+
+const languageSwitcherStyles = tv({
+  slots: {
+    root: "rounded-custom-32 bg-white p-1 ",
+    tabsList: "",
+    tabsTrigger:
+      "cursor-pointer rounded-custom-32 px-3.5 py-3 text-sm leading-1 text-custom-dark transition-all  data-[state=active]:bg-[#0A0A0A] data-[state=active]:text-white ",
+  },
+});
+
+const { root: switcherRoot, tabsList, tabsTrigger } = languageSwitcherStyles();
+
+const LanguageSwitcher = () => {
+  return (
+    <Tabs className={switcherRoot()} defaultValue="ua">
+      <TabsList className={tabsList()}>
+        <TabsTrigger value="ua" className={tabsTrigger()}>
+          UA
+        </TabsTrigger>
+        <TabsTrigger value="en" className={tabsTrigger()}>
+          EN
+        </TabsTrigger>
+      </TabsList>
+    </Tabs>
+  );
 };
