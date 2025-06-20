@@ -7,11 +7,10 @@ export interface Product {
   id: string;
   name: string;
   imageUrl: string;
-  // price?: number;
   currency?: string;
   isFavorite: boolean;
   sale?: Sale;
   seller: Seller;
-  weights?: ProductWeight[];
+  weights: ProductWeight[];
   delivery: Delivery;
 }

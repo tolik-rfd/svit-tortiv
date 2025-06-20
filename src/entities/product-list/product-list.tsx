@@ -1,14 +1,22 @@
 import React from "react";
-import products from "./products.json";
+// .
 import { ProductCard } from "../product-card";
+import { Product } from "./types/product";
+import classNames from "classnames";
 
-// type ProductListProps = {
-//   className?: string;
-// };
+type Props = {
+  products: Product[];
+  className?: string;
+};
 
-export const ProductList = () => {
+export const ProductList = ({ products, className }: Props) => {
   return (
-    <div className="flex gap-4 flex-col items-center md-custom:flex-row">
+    <div
+      className={classNames(
+        "flex flex-col flex-wrap items-center justify-center gap-4 md-custom:flex-row",
+        className,
+      )}
+    >
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

@@ -35,6 +35,11 @@
   padding: 24px 96px;
 }
 
+.size-full {
+  font-size: 16px;
+  padding-block: 11.5px;
+}
+
 .text {
   padding: 5px;
   color: var(--color-custom-dark);

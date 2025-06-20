@@ -4,6 +4,7 @@ import { ProductList } from "@/entities/product-list";
 import { CustomButton } from "@/shared/ui/custom-button";
 import { IconButton } from "@/shared/ui/icon-button";
 import Link from "next/link";
+import products from "@/entities/product-list/products.json";
 
 export default async function HomePage() {
   // const products = await productsService.getProducts();
@@ -15,13 +16,12 @@ export default async function HomePage() {
       <CustomButton asChild>
         <Link href="/about">Посилання</Link>
       </CustomButton>
-      fghfh
       <IconButton variant="solid" asChild>
         <Link href="#">
           <InstagramIcon />
         </Link>
       </IconButton>
-      <ProductList />
+      <ProductList products={products} className="mt-7" />
       {/* <ul className="list-disc pl-5 space-y-2 text-gray-700">
         {products.map(({ id, title }) => (
           <li key={id}>{title}</li>

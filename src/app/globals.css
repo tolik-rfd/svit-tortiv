@@ -37,6 +37,7 @@
 
   /* Custom Colors */
   --color-custom-orange: var(--color-custom-orange);
+  --color-custom-red: var(--color-custom-red);
   --color-custom-tiffany: var(--color-custom-tiffany);
   --color-custom-blue: var(--color-custom-blue);
   --color-custom-lilac: var(--color-custom-lilac);
@@ -48,6 +49,7 @@
   --color-custom-gray: var(--color-custom-gray);
   --color-custom-dark: var(--color-custom-dark);
   --color-custom-chocolate: var(--color-custom-chocolate);
+  --color-custom-chocolate-dark: var(--color-custom-chocolate-dark);
   --color-custom-coral: var(--color-custom-coral);
   --color-custom-ocean: var(--color-custom-ocean);
 
@@ -78,8 +80,9 @@
   --color-chart-5: var(--chart-5);
 
   /* Screens */
-  --screen-xs-custom: var(--screen-xs-custom);
-  --screen-xl-custom: var(--screen-xl-custom);
+  --breakpoint-xs-custom: 360px;
+  --breakpoint-md-custom: 710px;
+  --breakpoint-xl-custom: 1440px;
 
   /* Border Radius */
   --radius-custom-24: var(--border-radius-custom-24);
@@ -94,6 +97,7 @@
 
   /* Color Palette */
   --color-custom-orange: #e1780e;
+  --color-custom-red: #e10e0e;
   --color-custom-tiffany: #a0d8e1;
   --color-custom-blue: #15a6e5;
   --color-custom-lilac: #dfc6ff;
@@ -160,6 +164,7 @@
 
   /* Screens */
   --screen-xs-custom: 360px;
+  --screen-md-custom: 710px;
   --screen-xl-custom: 1440px;
 
   /* Border Radius */
