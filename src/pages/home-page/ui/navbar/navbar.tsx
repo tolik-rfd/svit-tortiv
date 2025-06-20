@@ -20,74 +20,22 @@ import { CartIcon } from "@/shared/assets/icons/cart-icon";
 
 const navbarStyles = tv({
   slots: {
-    // wrapper: "sticky top-0 z-50",
-    root: "sticky top-0 z-50 items-center justify-between bg-custom-cofe px-3 py-2 text-custom-dark",
+    root: "sticky top-0 z-50 flex items-center justify-between bg-custom-cofe px-3 py-2 text-custom-dark",
     logo: " text-xl font-bold",
     location: " text-sm ",
     catalogButton: "hidden lg:block",
-    searchBar: "",
     actions: "",
-    languageSwitcher: "text-sm ",
-    mobile: "flex lg:hidden",
-    desktop: "hidden lg:flex",
   },
 });
 
-const {
-  // wrapper,
-  root,
-  logo,
-  location,
-  catalogButton,
-  searchBar,
-  actions,
-  languageSwitcher,
-  mobile,
-  desktop,
-} = navbarStyles();
+const { root, logo, location, catalogButton } = navbarStyles();
 
 interface NavbarProps {}
 
 export const Navbar: FC<NavbarProps> = (props) => {
   const {} = props;
   return (
-    // <div className={wrapper()}>
-    <>
-      <Mobile />
-      <Desktop />
-    </>
-
-    // </div>
-  );
-};
-
-///////////////////////////////////////
-const Mobile = () => {
-  return (
-    <div className={root({ className: mobile() })}>
-      <div className={logo()}>
-        <Logo />
-      </div>
-      <div className={location()}>
-        <Location />
-      </div>
-      <div className={catalogButton()}>
-        <CatalogButton />
-      </div>
-      <div>
-        <SearchBar />
-      </div>
-      <div className={languageSwitcher()}>
-        <LanguageSwitcher />
-      </div>
-    </div>
-  );
-};
-
-///////////////////
-const Desktop = () => {
-  return (
-    <div className={root({ className: desktop() })}>
+    <div className={root()}>
       <div className={logo()}>
         <Logo />
       </div>
@@ -138,16 +86,40 @@ const CatalogButton = () => {
 
 /////////////////////////////////////
 
+const actionsStyles = tv({
+  slots: {
+    actionsRoot: "flex items-center justify-between gap-8",
+    searchBar: "",
+    profile: "hidden lg:block",
+    favorite: "hidden lg:block",
+    cart: "hidden lg:block",
+    languageSwitcher: "",
+  },
+});
+
+const { actionsRoot, searchBar, profile, favorite, cart, languageSwitcher } =
+  actionsStyles();
+
 const Actions = () => {
   return (
-    <div className="flex items-center justify-between gap-8">
-      <SearchBar />
-      <CustomButton style={{ padding: "12px 20px" }}>
-        Вхід | Реєстрація
-      </CustomButton>
-      <HeartIcon />
-      <CartIcon />
-      <LanguageSwitcher />
+    <div className={actionsRoot()}>
+      <div className={searchBar()}>
+        <SearchBar />
+      </div>
+      <div className={profile()}>
+        <CustomButton style={{ padding: "12px 20px" }}>
+          Вхід | Реєстрація
+        </CustomButton>
+      </div>
+      <div className={favorite()}>
+        <HeartIcon />
+      </div>
+      <div className={cart()}>
+        <CartIcon />
+      </div>
+      <div className={languageSwitcher()}>
+        <LanguageSwitcher />
+      </div>
     </div>
   );
 };
