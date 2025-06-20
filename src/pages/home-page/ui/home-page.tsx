@@ -2,29 +2,13 @@
 import { InstagramIcon } from "@/shared/assets/icons/instagram-icon";
 import { CustomButton } from "@/shared/ui/custom-button";
 import { IconButton } from "@/shared/ui/icon-button";
+import { Lorem } from "@/shared/ui/lorem";
 import Link from "next/link";
 
 export default async function HomePage() {
-  // const products = await productsService.getProducts();
-
   return (
-    <div className="min-h-screen bg-custom-cofe">
-      <h2 className="text-title-sm text-white">Hello World!</h2>
-      <CustomButton>Дивитися всі</CustomButton>
-      <CustomButton asChild>
-        <Link href="/about">Посилання</Link>
-      </CustomButton>
-      fghfh
-      <IconButton variant="solid" asChild>
-        <Link href="#">
-          <InstagramIcon />
-        </Link>
-      </IconButton>
-      {/* <ul className="list-disc pl-5 space-y-2 text-gray-700">
-        {products.map(({ id, title }) => (
-          <li key={id}>{title}</li>
-        ))}
-      </ul> */}
-    </div>
+    <main>
+      <Lorem count={70} />
+    </main>
   );
 }

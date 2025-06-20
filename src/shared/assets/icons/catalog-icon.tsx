@@ -1,6 +1,6 @@
 import React from "react";
 
-export const CatalogIcon: React.FC = (props) => (
+export const CatalogIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
     width="25"
     height="25"
