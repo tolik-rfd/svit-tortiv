@@ -18,6 +18,7 @@ import { HeartIcon } from "@/shared/assets/icons/heart-icon";
 
 const mainNavbarStyles = tv({
   slots: {
+    navbar: "sticky top-0 z-50 px-0",
     catalogButton: "hidden lg:block",
     profile: "hidden lg:block",
     favorite: "hidden lg:block",
@@ -25,14 +26,14 @@ const mainNavbarStyles = tv({
   },
 });
 
-const { catalogButton, profile, favorite, cart } = mainNavbarStyles();
+const { navbar, catalogButton, profile, favorite, cart } = mainNavbarStyles();
 
 interface MainNavbarProps {}
 
 export const MainNavbar: FC<MainNavbarProps> = (props) => {
   const {} = props;
   return (
-    <Navbar>
+    <Navbar className={navbar()}>
       <NavbarItem>
         <Logo />
       </NavbarItem>
