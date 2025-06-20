@@ -5,8 +5,7 @@ import { tv } from "tailwind-variants";
 
 const navbarStyles = tv({
   slots: {
-    navbar:
-      "flex items-center justify-between bg-custom-cofe px-3 py-2 text-custom-dark",
+    navbar: "flex items-center justify-between px-3 py-2 text-custom-dark",
     navbarItem: "",
     actions: "flex items-center justify-between gap-8",
     actionsItem: "",

@@ -37,8 +37,7 @@ const styles = tv({
 const { navbar, panel, trigger, slider, sliderItem, icon, text } = styles();
 
 ////////////////////////////////////////////////////////////////////
-type MobileNavbarContextValue = Omit<MobileNavbarProps, "isActive"> &
-  MobileNavbarState;
+type MobileNavbarContextValue = MobileNavbarState;
 
 interface MobileNavbarState {
   currentTabValue: string;
@@ -72,12 +71,11 @@ interface MobileNavbarProps
 }
 
 const MobileNavbar: FC<MobileNavbarProps> = (props) => {
-  const { items, children, ...rest } = props;
+  const { items, children, className, ...rest } = props;
   const { currentTabValue, setCurrentTabValue, sliderStyles, onValueChange } =
     useMobileNavbar({ items });
 
   const context: MobileNavbarContextValue = {
-    items,
     currentTabValue,
     setCurrentTabValue,
     sliderStyles,
@@ -86,7 +84,11 @@ const MobileNavbar: FC<MobileNavbarProps> = (props) => {
 
   return (
     <MobileNavbarContextProvider value={context}>
-      <Root className={navbar()} onValueChange={onValueChange} {...rest}>
+      <Root
+        className={navbar({ className })}
+        onValueChange={onValueChange}
+        {...rest}
+      >
         {children}
       </Root>
     </MobileNavbarContextProvider>
@@ -94,18 +96,15 @@ const MobileNavbar: FC<MobileNavbarProps> = (props) => {
 };
 
 ///////////////////////////////////////////////////
-interface MobileNavbarListProps
-  extends Omit<ComponentPropsWithoutRef<typeof List>, "children"> {
-  children: (item: MobileNavbarItem, index: number) => ReactNode;
-}
+interface MobileNavbarListProps extends ComponentPropsWithoutRef<typeof List> {}
 
 const MobileNavbarList: FC<MobileNavbarListProps> = (props) => {
-  const { children } = props;
-  const { items } = useMobileNavbarContext();
+  const { children, className } = props;
+
   return (
-    <List className={panel()}>
+    <List className={panel({ className })}>
       <Slider />
-      {items.map(children as any)}
+      {children}
     </List>
   );
 };
@@ -131,9 +130,9 @@ interface MobileNavbarTriggerProps
 }
 
 const MobileNavbarTrigger: FC<MobileNavbarTriggerProps> = (props) => {
-  const { children, value, ...rest } = props;
+  const { children, value, className, ...rest } = props;
   return (
-    <Trigger className={trigger()} value={value} {...rest}>
+    <Trigger className={trigger({ className })} value={value} {...rest}>
       {children}
     </Trigger>
   );

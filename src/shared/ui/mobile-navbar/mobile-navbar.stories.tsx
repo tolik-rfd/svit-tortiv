@@ -63,14 +63,14 @@ export const Primary: Story = {
       <div className="bg-[#FCF7F4] py-10">
         <MobileNavbar items={NAVBAR_ITEMS}>
           <MobileNavbarList>
-            {({ value, label, icon }) => {
+            {NAVBAR_ITEMS.map(({ value, icon, label }) => {
               return (
                 <MobileNavbarTrigger value={value} key={value}>
                   <MobileNavbarIcon icon={icon} value={value} />
                   <MobileNavbarLabel label={label} value={value} />
                 </MobileNavbarTrigger>
               );
-            }}
+            })}
           </MobileNavbarList>
         </MobileNavbar>
       </div>
