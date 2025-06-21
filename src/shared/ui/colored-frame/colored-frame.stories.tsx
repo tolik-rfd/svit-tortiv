@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Image from "next/image";
 import ManWithCakes from "@/shared/assets/images/man-with-cakes.png";
 
@@ -36,7 +36,7 @@ type Story = StoryObj<typeof ColoredFrame>;
 
 export const Default: Story = {
   render: (args) => (
-    <div className="flex gap-4 flex-wrap h-[800px] w-[800px] p-20">
+    <div className="flex h-[800px] w-[800px] flex-wrap gap-4 p-20">
       <ColoredFrame {...args} />
     </div>
   ),
@@ -44,14 +44,14 @@ export const Default: Story = {
 
 export const WithImage: Story = {
   render: (args) => (
-    <div className="flex gap-4 flex-wrap h-[800px] w-[800px] p-20">
+    <div className="flex h-[800px] w-[800px] flex-wrap gap-4 p-20">
       <ColoredFrame {...args} size="xl" rounded="xs" backgroundColor="yellow">
         <Image
           src={ManWithCakes}
           alt="Man with Cakes"
           width={507}
           height={591}
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 transform"
         />
       </ColoredFrame>
     </div>

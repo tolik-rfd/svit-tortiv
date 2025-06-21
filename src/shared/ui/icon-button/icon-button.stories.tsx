@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { IconButton } from "./icon-button";
 import { InstagramIcon } from "@/shared/assets/icons/instagram-icon";
 import { CartIcon } from "@/shared/assets/icons/cart-icon";
