@@ -1,13 +1,14 @@
 "use client";
 import { Product } from "@/entities/product-list/types/product";
 import classNames from "classnames";
-import React, { useState } from "react";
+import React, { FC } from "react";
+import { useState } from "react";
 
 type Props = {
   product: Product;
 };
 
-export const ProductInfo = ({ product }: Props) => {
+export const ProductInfo: FC<Props> = ({ product }) => {
   const { name, sale, weights } = product;
 
   const [selectedWeightId, setSelectedWeightId] = useState(
@@ -65,7 +66,7 @@ export const ProductInfo = ({ product }: Props) => {
           <>
             <p className="text-sm line-through">{`${selectedWeight.price} ${weights?.[0].currency}`}</p>
             <p className="text-xl text-custom-red">
-              {selectedWeight && sale.salePercent
+              {selectedWeight && sale?.salePercent
                 ? (
                     selectedWeight.price *
                     ((100 - sale.salePercent) / 100)

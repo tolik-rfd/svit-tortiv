@@ -1,12 +1,12 @@
 import { Seller } from "@/entities/product-list/types/seller";
 import Image from "next/image";
-import React from "react";
+import React, { FC } from "react";
 
 type Props = {
   seller: Seller;
 };
 
-export const ProductSeller = ({ seller }: Props) => {
+export const ProductSeller: FC<Props> = ({ seller }) => {
   const { name, avatarUrl, location } = seller;
 
   return (
