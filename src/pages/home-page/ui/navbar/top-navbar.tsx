@@ -16,9 +16,9 @@ import { CartIcon } from "@/shared/assets/icons/cart-icon";
 import { Navbar, NavbarActions, NavbarActionsItem, NavbarItem } from "./navbar";
 import { HeartIcon } from "@/shared/assets/icons/heart-icon";
 
-const mainNavbarStyles = tv({
+const topNavbarStyles = tv({
   slots: {
-    navbar: "sticky top-0 z-50 px-0",
+    navbar: "sticky top-0 z-50 bg-custom-background px-0",
     catalogButton: "hidden lg:block",
     profile: "hidden lg:block",
     favorite: "hidden lg:block",
@@ -26,11 +26,11 @@ const mainNavbarStyles = tv({
   },
 });
 
-const { navbar, catalogButton, profile, favorite, cart } = mainNavbarStyles();
+const { navbar, catalogButton, profile, favorite, cart } = topNavbarStyles();
 
-interface MainNavbarProps {}
+interface TopNavbarProps {}
 
-export const MainNavbar: FC<MainNavbarProps> = (props) => {
+export const TopNavbar: FC<TopNavbarProps> = (props) => {
   const {} = props;
   return (
     <Navbar className={navbar()}>
@@ -68,7 +68,7 @@ export const MainNavbar: FC<MainNavbarProps> = (props) => {
 
 /////////////////////////////////////
 
-// This section contains the components used in the MainNavbar. It can be separated into its own file if needed. Like features in features layer or in shared layer.
+// This section contains the components used in the TopNavbar. It can be separated into its own file if needed. Like features in features layer or in shared layer.
 // This is just a quick implementation.
 
 const Logo = () => {

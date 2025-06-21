@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { MainNavbar } from "../navbar";
+import { TopNavbar } from "../navbar";
+import { BottomNavbar } from "../bottom-navbar";
 
 interface HeaderProps {}
 
@@ -7,7 +8,8 @@ export const Header: FC<HeaderProps> = (props) => {
   const {} = props;
   return (
     <header style={{ display: "unset" }}>
-      <MainNavbar />
+      <TopNavbar />
+      <BottomNavbar />
     </header>
   );
 };
