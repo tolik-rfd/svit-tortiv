@@ -10,7 +10,7 @@ import { SearchIcon } from "@/shared/assets/icons/search-icon";
 import { SmartLink } from "@/shared/ui/smart-link";
 import { LocationIcon } from "@/shared/assets/icons/location-icon";
 import { Tabs, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
-import { CustomButton } from "@/shared/ui/custom-button";
+import { Button } from "@/shared/ui/button";
 import { CatalogIcon } from "@/shared/assets/icons/catalog-icon";
 import { CartIcon } from "@/shared/assets/icons/cart-icon";
 import { Navbar, NavbarActions, NavbarActionsItem, NavbarItem } from "./navbar";
@@ -48,9 +48,7 @@ export const TopNavbar: FC<TopNavbarProps> = (props) => {
           <SearchBar />
         </NavbarActionsItem>
         <NavbarActionsItem className={profile()}>
-          <CustomButton style={{ padding: "12px 20px" }}>
-            Вхід | Реєстрація
-          </CustomButton>
+          <Button style={{ padding: "12px 20px" }}>Вхід | Реєстрація</Button>
         </NavbarActionsItem>
         <NavbarActionsItem className={favorite()}>
           <HeartIcon />
@@ -95,9 +93,9 @@ const Location = () => {
 
 const CatalogButton = () => {
   return (
-    <CustomButton style={{ padding: "12px 20px" }} color="dark">
+    <Button style={{ padding: "12px 20px" }} color="dark">
       <CatalogIcon width={18} height={18} /> Каталог
-    </CustomButton>
+    </Button>
   );
 };
 
