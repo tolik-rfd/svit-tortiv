@@ -4,6 +4,10 @@
     "name": "Шварцвальдський вишневий торт",
     "imageUrl": "/images/image-1.png",
     "isFavorite": false,
+    "unit": "кг",
+    "price": 400,
+    "currency": "₴",
+    "available": true,
     "sale": {
       "isActive": true,
       "salePercent": 25
@@ -17,37 +21,22 @@
     "weights": [
       {
         "id": "1",
-        "value": 2,
-        "unit": "кг",
-        "price": 400,
-        "currency": "₴",
-        "available": true
+        "value": 2
       },
       {
         "id": "2",
-        "value": 4,
-        "unit": "кг",
-        "price": 780,
-        "currency": "₴",
-        "available": true
+        "value": 4
       },
       {
         "id": "3",
-        "value": 5,
-        "unit": "кг",
-        "price": 950,
-        "currency": "₴",
-        "available": true
+        "value": 5
       },
       {
         "id": "4",
-        "value": 8,
-        "unit": "кг",
-        "price": 1500,
-        "currency": "₴",
-        "available": true
+        "value": 8
       }
     ],
+    "amounts": null,
     "delivery": {
       "timeDays": 3,
       "cost": 600
@@ -58,6 +47,10 @@
     "name": "Шварцвальдський вишневий торт",
     "imageUrl": "/images/image-1.png",
     "isFavorite": true,
+    "unit": "кг",
+    "price": 400,
+    "currency": "₴",
+    "available": true,
     "sale": {
       "isActive": false
     },
@@ -70,37 +63,23 @@
     "weights": [
       {
         "id": "1",
-        "value": 2,
-        "unit": "кг",
-        "price": 400,
-        "currency": "₴",
-        "available": true
+        "value": 2
       },
       {
         "id": "2",
-        "value": 4,
-        "unit": "кг",
-        "price": 780,
-        "currency": "₴",
-        "available": true
+        "value": 4
       },
       {
         "id": "3",
-        "value": 5,
-        "unit": "кг",
-        "price": 950,
-        "currency": "₴",
-        "available": true
+        "value": 5
       },
       {
         "id": "4",
-        "value": 8,
-        "unit": "кг",
-        "price": 1500,
-        "currency": "₴",
-        "available": true
+        "value": 8
       }
     ],
+    "amounts": null,
+
     "delivery": {
       "timeDays": 3,
       "cost": 600
@@ -111,6 +90,10 @@
     "name": "Шварцвальдський вишневий торт",
     "imageUrl": "/images/image-1.png",
     "isFavorite": true,
+    "unit": "шт",
+    "price": 100,
+    "currency": "₴",
+    "available": true,
     "sale": {
       "isActive": false
     },
@@ -120,22 +103,15 @@
       "location": "м. Київ",
       "avatarUrl": "/photos/photo-1.png"
     },
-    "weights": [
+    "weights": null,
+    "amounts": [
       {
         "id": "1",
-        "value": 12,
-        "unit": "шт",
-        "price": 400,
-        "currency": "₴",
-        "available": true
+        "value": 12
       },
       {
         "id": "2",
-        "value": 24,
-        "unit": "шт",
-        "price": 780,
-        "currency": "₴",
-        "available": true
+        "value": 24
       }
     ],
     "delivery": {

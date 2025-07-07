@@ -1,4 +1,4 @@
-export interface Sale {
+export interface SaleType {
   isActive: boolean;
   salePercent?: number;
 }

@@ -1,16 +1,20 @@
-import { Delivery } from "./delivery";
-import { ProductWeight } from "./product-weight";
-import { Sale } from "./sale";
-import { Seller } from "./seller";
+import { DeliveryType } from "./delivery";
+import { ProductValueType } from "./product-value";
+import { SaleType } from "./sale";
+import { SellerType } from "./seller";
 
-export interface Product {
+export interface ProductType {
   id: string;
   name: string;
   imageUrl: string;
-  currency?: string;
   isFavorite: boolean;
-  sale?: Sale;
-  seller: Seller;
-  weights: ProductWeight[];
-  delivery: Delivery;
+  unit: string;
+  price: number;
+  currency: string;
+  available: boolean;
+  sale?: SaleType;
+  seller: SellerType;
+  weights: ProductValueType[] | null;
+  amounts: ProductValueType[] | null;
+  delivery: DeliveryType;
 }
