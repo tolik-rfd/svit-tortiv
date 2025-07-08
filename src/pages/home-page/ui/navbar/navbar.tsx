@@ -55,7 +55,6 @@ const NAVBAR_ITEMS: Item[] = [
 
 const topNavbarStyles = tv({
   slots: {
-    navbar: "sticky top-0 z-50 bg-custom-background px-0",
     catalogButton: "hidden lg:block",
     profile: "hidden lg:block",
     favorite: "hidden lg:block",
@@ -63,7 +62,7 @@ const topNavbarStyles = tv({
   },
 });
 
-const { navbar, catalogButton, profile, favorite, cart } = topNavbarStyles();
+const { catalogButton, profile, favorite, cart } = topNavbarStyles();
 
 const bottomNavbarStyles = tv({
   slots: {
@@ -79,7 +78,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
   const {} = props;
   return (
     <>
-      <NavbarUi.Root className={navbar()}>
+      <NavbarUi.Root>
         <NavbarUi.Item>
           <Logo />
         </NavbarUi.Item>
