@@ -1,7 +1,11 @@
 "use client";
 
 import { createContext } from "@/shared/hooks/context";
-import { List, Root, Trigger } from "@radix-ui/react-tabs";
+import {
+  List as ListTabs,
+  Root as RootTabs,
+  Trigger as TriggerTabs,
+} from "@radix-ui/react-tabs";
 import { CSSProperties, ComponentPropsWithoutRef, FC, ReactNode } from "react";
 import { VariantProps, tv } from "tailwind-variants";
 import { useMobileNavbar } from "./use-mobile-navbar";
@@ -37,9 +41,9 @@ const styles = tv({
 const { navbar, panel, trigger, slider, sliderItem, icon, text } = styles();
 
 ////////////////////////////////////////////////////////////////////
-type MobileNavbarContextValue = MobileNavbarState;
+type ContextValue = State;
 
-interface MobileNavbarState {
+interface State {
   currentTabValue: string;
   setCurrentTabValue: (value: string) => void;
   sliderStyles: CSSProperties | undefined;
@@ -47,7 +51,7 @@ interface MobileNavbarState {
 }
 
 const [MobileNavbarContextProvider, useMobileNavbarContext] =
-  createContext<MobileNavbarContextValue>({
+  createContext<ContextValue>({
     strict: true,
     name: "MobileNavbarContext",
     errorMessage: "useMobileNavbarContext: `context` is undefined...",
@@ -57,25 +61,25 @@ const [MobileNavbarContextProvider, useMobileNavbarContext] =
 
 type StylesVariants = VariantProps<typeof styles>;
 
-interface MobileNavbarItem {
+interface Item {
   value: string;
   label: string;
   icon: ReactNode;
   href?: string;
 }
 
-interface MobileNavbarProps
-  extends ComponentPropsWithoutRef<typeof Root>,
+interface RootProps
+  extends ComponentPropsWithoutRef<typeof RootTabs>,
     StylesVariants {
-  items: MobileNavbarItem[];
+  items: Item[];
 }
 
-const MobileNavbar: FC<MobileNavbarProps> = (props) => {
+const Root: FC<RootProps> = (props) => {
   const { items, children, className, ...rest } = props;
   const { currentTabValue, setCurrentTabValue, sliderStyles, onValueChange } =
     useMobileNavbar({ items });
 
-  const context: MobileNavbarContextValue = {
+  const context: ContextValue = {
     currentTabValue,
     setCurrentTabValue,
     sliderStyles,
@@ -84,28 +88,28 @@ const MobileNavbar: FC<MobileNavbarProps> = (props) => {
 
   return (
     <MobileNavbarContextProvider value={context}>
-      <Root
+      <RootTabs
         className={navbar({ className })}
         onValueChange={onValueChange}
         {...rest}
       >
         {children}
-      </Root>
+      </RootTabs>
     </MobileNavbarContextProvider>
   );
 };
 
 ///////////////////////////////////////////////////
-interface MobileNavbarListProps extends ComponentPropsWithoutRef<typeof List> {}
+interface ListProps extends ComponentPropsWithoutRef<typeof ListTabs> {}
 
-const MobileNavbarList: FC<MobileNavbarListProps> = (props) => {
+const List: FC<ListProps> = (props) => {
   const { children, className } = props;
 
   return (
-    <List className={panel({ className })}>
+    <ListTabs className={panel({ className })}>
       <Slider />
       {children}
-    </List>
+    </ListTabs>
   );
 };
 
@@ -124,28 +128,27 @@ const Slider = () => {
 
 //////////////////////////////////////////////////
 
-interface MobileNavbarTriggerProps
-  extends ComponentPropsWithoutRef<typeof Trigger> {
+interface TriggerProps extends ComponentPropsWithoutRef<typeof TriggerTabs> {
   value: string;
 }
 
-const MobileNavbarTrigger: FC<MobileNavbarTriggerProps> = (props) => {
+const Trigger: FC<TriggerProps> = (props) => {
   const { children, value, className, ...rest } = props;
   return (
-    <Trigger className={trigger({ className })} value={value} {...rest}>
+    <TriggerTabs className={trigger({ className })} value={value} {...rest}>
       {children}
-    </Trigger>
+    </TriggerTabs>
   );
 };
 
 ///////////////////////////////////////////////////
 
-interface MobileNavbarIconProps {
+interface IconProps {
   icon: ReactNode;
   value: string;
 }
 
-const MobileNavbarIcon: FC<MobileNavbarIconProps> = (props) => {
+const Icon: FC<IconProps> = (props) => {
   const { icon: Icon, value } = props;
   const { currentTabValue } = useMobileNavbarContext();
 
@@ -163,12 +166,12 @@ const MobileNavbarIcon: FC<MobileNavbarIconProps> = (props) => {
 };
 
 ////////////////////////////////////////////
-interface MobileNavbarLabelProps {
+interface LabelProps {
   label: string;
   value: string;
 }
 
-const MobileNavbarLabel: FC<MobileNavbarLabelProps> = (props) => {
+const Label: FC<LabelProps> = (props) => {
   const { label, value } = props;
   const { currentTabValue } = useMobileNavbarContext();
 
@@ -178,16 +181,16 @@ const MobileNavbarLabel: FC<MobileNavbarLabelProps> = (props) => {
 };
 
 export {
-  MobileNavbar,
-  MobileNavbarList,
-  MobileNavbarTrigger,
-  MobileNavbarIcon,
-  MobileNavbarLabel,
-  type MobileNavbarState,
-  type MobileNavbarProps,
-  type MobileNavbarListProps,
-  type MobileNavbarTriggerProps,
-  type MobileNavbarIconProps,
-  type MobileNavbarLabelProps,
-  type MobileNavbarItem,
+  Root,
+  List,
+  Trigger,
+  Icon,
+  Label,
+  type State,
+  type RootProps,
+  type ListProps,
+  type TriggerProps,
+  type IconProps,
+  type LabelProps,
+  type Item,
 };
