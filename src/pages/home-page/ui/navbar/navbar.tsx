@@ -130,8 +130,10 @@ export const Navbar: FC<NavbarProps> = (props) => {
 const Logo = () => {
   return (
     <SmartLink href={"/"}>
-      <Image src={logoXSVertical} alt="Logo" className="lg:hidden" />
-      <Image src={logoMDHorizontal} alt="Logo" className="hidden lg:block" />
+      <picture>
+        <source srcSet={logoMDHorizontal.src} media="(min-width: 1024px)" />
+        <img src={logoXSVertical.src} alt="Logo" loading="eager" />
+      </picture>
     </SmartLink>
   );
 };
