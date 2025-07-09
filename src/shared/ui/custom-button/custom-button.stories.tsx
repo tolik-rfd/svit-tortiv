@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { CustomButton } from "./custom-button";
 
 const meta: Meta<typeof CustomButton> = {
