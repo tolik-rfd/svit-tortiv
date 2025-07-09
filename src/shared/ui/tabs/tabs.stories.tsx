@@ -52,10 +52,9 @@ export const Secondary: Story = {
     </Tabs>
   ),
 };
-
 export const NavTabs: Story = {
   render: (args) => (
-    <div className="flex gap-6 flex-col">
+    <div className="flex flex-col gap-6">
       <Tabs {...args} defaultValue="Кондитерам">
         <TabsList>
           <TabsTrigger value="Кондитерам">Кондитерам</TabsTrigger>
