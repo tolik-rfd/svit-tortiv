@@ -71,12 +71,12 @@ TabsList.displayName = List.displayName;
 
 ////////////////////////////////////////////////////////////////////////////////////
 const tabsTriggerVariants = tv({
-  base: "inline-flex items-center justify-center text-base font-normal whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50",
+  base: "inline-flex cursor-pointer items-center justify-center text-base font-normal whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50",
 
   variants: {
     variant: {
       primary:
-        "text-dark rounded-custom-80 bg-custom-cofe p-0.5 px-7.5 py-2.5 font-normal uppercase data-[state=active]:bg-custom-dark  data-[state=active]:text-white",
+        "text-dark rounded-custom-80 bg-custom-cofe p-0.5 px-10 py-3.5 text-xl font-normal uppercase data-[state=active]:bg-custom-dark  data-[state=active]:text-white",
       secondary:
         "font-medium text-custom-light-gray data-[state=active]:text-black ",
     },

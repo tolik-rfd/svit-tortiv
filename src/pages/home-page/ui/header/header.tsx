@@ -20,7 +20,7 @@ export const Header: FC<HeaderProps> = (props) => {
     <header className={header()}>
       <PageContainer>
         <Navbar />
-        <div className="flex items-center">
+        <div className="flex w-full justify-center">
           <NavTabs />
         </div>
       </PageContainer>
