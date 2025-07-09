@@ -6,7 +6,7 @@ import { NavTabs } from "./nav-tabs";
 
 const headerStyles = tv({
   slots: {
-    header: "sticky top-0 left-0 z-50 w-full bg-custom-background",
+    header: "sticky top-0 left-0 z-50  w-full  bg-custom-background  py-5.5",
   },
 });
 
@@ -20,7 +20,7 @@ export const Header: FC<HeaderProps> = (props) => {
     <header className={header()}>
       <PageContainer>
         <Navbar />
-        <div className="flex w-full justify-center">
+        <div className="mt-9 flex w-full justify-center">
           <NavTabs />
         </div>
       </PageContainer>
