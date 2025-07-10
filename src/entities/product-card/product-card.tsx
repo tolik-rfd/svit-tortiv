@@ -1,6 +1,5 @@
 "use client";
 import { FC, ReactNode, useState } from "react";
-import { SellerType } from "../product-list/types/seller";
 import Image from "next/image";
 import classNames from "classnames";
 import { LikeIcon } from "@/shared/assets/icons/like-icon";
@@ -13,6 +12,7 @@ import { DeliveryType } from "../product-list/types/delivery";
 import { DeliveryLocationIcon } from "@/shared/assets/icons/delivery-location-icon";
 import { ClockIcon } from "@/shared/assets/icons/clock-icon";
 import { MoneyIcon } from "@/shared/assets/icons/money-icon";
+import { SaleType } from "../product-list/types/sale";
 
 interface RootProps {
   children: ReactNode;
@@ -23,7 +23,7 @@ const Root: FC<RootProps> = ({ children, className }) => {
   return (
     <div
       className={classNames(
-        "flex flex-col gap-6 rounded-custom-24 bg-white p-4 text-custom-chocolate-dark",
+        "flex flex-col gap-3 rounded-custom-24 bg-white p-4 text-custom-chocolate-dark",
         className,
       )}
     >
@@ -32,64 +32,73 @@ const Root: FC<RootProps> = ({ children, className }) => {
   );
 };
 
-// Seller
-interface SellerProps {
-  seller: SellerType;
+// AddToFavorites
+interface AddToFavoritesProps {
+  isFavorite: boolean;
   className?: string;
 }
 
-const Seller: FC<SellerProps> = ({ seller, className }) => {
-  const { name, avatarUrl, location } = seller;
+const AddToFavorites: FC<AddToFavoritesProps> = ({ isFavorite, className }) => {
+  const handleAddToFavorites = () => {};
   return (
-    <div className={classNames("flex flex-col gap-2", className)}>
-      <div className="flex items-center gap-1.5">
-        {avatarUrl && (
-          <Image
-            className="rounded-[50px]"
-            width={25}
-            height={25}
-            src={avatarUrl}
-            alt="Photo"
-          />
+    <IconButton
+      className={classNames(
+        "absolute top-[8px] right-[12px] h-9 w-9 bg-white text-custom-light-gray transition-all hover:text-black",
+        isFavorite && "text-black",
+        className,
+      )}
+      onClick={handleAddToFavorites}
+    >
+      <LikeIcon />
+    </IconButton>
+  );
+};
+
+// Sale
+interface SaleProps {
+  sale?: SaleType;
+  className?: string;
+}
+
+const Sale: FC<SaleProps> = ({ sale, className }) => {
+  return (
+    sale?.isActive && (
+      <FlameIcon
+        className={classNames(
+          "absolute top-[8px] left-[12px] h-9 w-9",
+          className,
         )}
+      />
+    )
+  );
+};
 
-        <p className="text-sm">{name}</p>
-      </div>
+// Photo
+interface PhotoProps {
+  imageUrl: string;
+  className?: string;
+}
 
-      <p className="text-xs">{location}</p>
-    </div>
+const Photo: FC<PhotoProps> = ({ imageUrl, className }) => {
+  return (
+    <Image
+      className={className}
+      width={300}
+      height={265}
+      src={imageUrl}
+      alt="Product photo"
+    />
   );
 };
 
 // Picture
 interface PictureProps {
-  product: ProductType;
+  children: ReactNode;
   className?: string;
 }
 
-const Picture: FC<PictureProps> = ({ product, className }) => {
-  const { imageUrl, sale } = product;
-
-  const handleAddToFavorites = () => {};
-  return (
-    <div className={classNames("relative", className)}>
-      <Image width={300} height={265} src={imageUrl} alt="Product photo" />
-
-      <IconButton
-        className={classNames(
-          "absolute top-[8px] right-[12px] h-9 w-9 bg-white text-custom-light-gray transition-all hover:text-black",
-          product.isFavorite && "text-black",
-        )}
-        onClick={handleAddToFavorites}
-      >
-        <LikeIcon />
-      </IconButton>
-
-      {sale?.isActive && (
-        <FlameIcon className="absolute top-[8px] left-[12px] h-9 w-9" />
-      )}
-    </div>
-  );
+const Picture: FC<PictureProps> = ({ children, className }) => {
+  return <div className={classNames("relative", className)}>{children}</div>;
 };
 
 // Info
@@ -213,7 +222,10 @@ const Delivery: FC<DeliveryProps> = ({ delivery, className }) => {
 
   return (
     <div
-      className={classNames("flex justify-between gap-4 text-xs", className)}
+      className={classNames(
+        "mt-3 flex justify-between gap-4 text-xs",
+        className,
+      )}
     >
       <div className="flex items-center gap-2">
         <DeliveryLocationIcon />
@@ -233,4 +245,15 @@ const Delivery: FC<DeliveryProps> = ({ delivery, className }) => {
   );
 };
 
-export { Root, Seller, Picture, Info, Actions, Delivery };
+export {
+  Root,
+  // SellerAvatar,
+  // Seller,
+  Photo,
+  AddToFavorites,
+  Sale,
+  Picture,
+  Info,
+  Actions,
+  Delivery,
+};
