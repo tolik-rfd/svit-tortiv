@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function CustomersPage() {
+export default async function CustomersPage() {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return (
     <main>
       <h1>Customers Page</h1>

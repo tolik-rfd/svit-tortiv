@@ -203,11 +203,24 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
     font-size: 16px;
+    /* overflow-y: scroll; */
+    scrollbar-gutter: stable;
   }
   body {
-    @apply bg-background font-e-ukraine text-foreground font-normal;
+    @apply bg-background font-e-ukraine font-normal text-foreground;
     @apply bg-custom-background;
     @apply min-h-screen;
   }

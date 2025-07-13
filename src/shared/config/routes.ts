@@ -41,12 +41,12 @@ export interface NavItem {
 // Main navigation items
 export const MAIN_NAV_ITEMS: NavItem[] = [
   {
-    value: "home",
+    value: AppRoutes.HOME,
     label: RouteNames.HOME,
     href: AppRoutes.HOME,
   },
   {
-    value: "customers",
+    value: AppRoutes.CUSTOMERS,
     label: RouteNames.CUSTOMERS,
     href: AppRoutes.CUSTOMERS,
   },
