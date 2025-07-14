@@ -14,12 +14,12 @@ import { ClockIcon } from "@/shared/assets/icons/clock-icon";
 import { MoneyIcon } from "@/shared/assets/icons/money-icon";
 import { SaleType } from "../product-list/types/sale";
 
-interface RootProps {
+interface SlotProps {
   children: ReactNode;
   className?: string;
 }
 
-const Root: FC<RootProps> = ({ children, className }) => {
+const Root: FC<SlotProps> = ({ children, className }) => {
   return (
     <div
       className={classNames(
@@ -30,6 +30,33 @@ const Root: FC<RootProps> = ({ children, className }) => {
       {children}
     </div>
   );
+};
+
+interface SlotProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const Header: FC<SlotProps> = ({ children, className }) => {
+  return <div className={className}>{children}</div>;
+};
+
+interface SlotProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const Body: FC<SlotProps> = ({ children, className }) => {
+  return <div className={className}>{children}</div>;
+};
+
+interface SlotProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const Footer: FC<SlotProps> = ({ children, className }) => {
+  return <div className={className}>{children}</div>;
 };
 
 // AddToFavorites
@@ -247,6 +274,9 @@ const Delivery: FC<DeliveryProps> = ({ delivery, className }) => {
 
 export {
   Root,
+  Header,
+  Body,
+  Footer,
   // SellerAvatar,
   // Seller,
   Photo,
