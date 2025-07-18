@@ -85,8 +85,10 @@
   --breakpoint-xl-custom: 1440px;
 
   /* Border Radius */
+  --radius-custom-16: var(--border-radius-custom-16);
   --radius-custom-24: var(--border-radius-custom-24);
   --radius-custom-32: var(--border-radius-custom-32);
+  --radius-custom-60: var(--border-radius-custom-60);
   --radius-custom-50: var(--border-radius-custom-50);
   --radius-custom-80: var(--border-radius-custom-80);
 }
@@ -165,9 +167,11 @@
   --screen-xl-custom: 1440px;
 
   /* Border Radius */
+  --border-radius-custom-16: 1rem;
   --border-radius-custom-24: 1.5rem;
   --border-radius-custom-32: 2rem;
   --border-radius-custom-50: 3.125rem;
+  --border-radius-custom-60: 3.75rem;
   --border-radius-custom-80: 5rem;
 }
 
@@ -203,11 +207,24 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
     font-size: 16px;
+    /* overflow-y: scroll; */
+    scrollbar-gutter: stable;
   }
   body {
-    @apply bg-background font-e-ukraine text-foreground font-normal;
+    @apply bg-background font-e-ukraine font-normal text-foreground;
     @apply bg-custom-background;
     @apply min-h-screen;
   }

@@ -1,20 +1,35 @@
-import { FC, ReactNode, useMemo } from "react";
+import { FC, useMemo } from "react";
 import classNames from "classnames";
-import { SellerType } from "../../../product-list/types/seller";
+import { SellerType } from "../../../entities/product-list/types/seller";
 import {
   Avatar as BaseAvatar,
   AvatarFallback,
   AvatarImage,
 } from "@/shared/ui/avatar";
+import { SlotType } from "../types/slot";
 
-interface RootProps {
-  children: ReactNode;
-  className?: string;
-}
-
-const Root: FC<RootProps> = ({ children, className }) => {
+const Root: FC<SlotType> = ({ children, className, ...rest }) => {
   return (
-    <div className={classNames("flex flex-col gap-2", className)}>
+    <div className={classNames("flex flex-col gap-2", className)} {...rest}>
+      {children}
+    </div>
+  );
+};
+
+const Top: FC<SlotType> = ({ children, className, ...rest }) => {
+  return (
+    <div
+      className={classNames("flex items-center gap-1.5", className)}
+      {...rest}
+    >
+      {children}
+    </div>
+  );
+};
+
+const Bottom: FC<SlotType> = ({ children, className, ...rest }) => {
+  return (
+    <div className={className} {...rest}>
       {children}
     </div>
   );
@@ -71,24 +86,4 @@ const Location: FC<LocationProps> = ({ location, className }) => {
   return <p className={classNames("text-sm", className)}>{location}</p>;
 };
 
-export { Root, Avatar, Name, Location };
-
-// Seller
-// interface SellerProps {
-//   seller: SellerType;
-//   className?: string;
-// }
-
-// const Seller: FC<SellerProps> = ({ seller, className }) => {
-//   const { name, location } = seller;
-//   return (
-//     <div className={classNames("flex flex-col gap-2", className)}>
-//       <div className="flex items-center gap-1.5">
-//         <SellerAvatar seller={seller} />
-//         <SellerName name={name} />
-//       </div>
-
-//       <SellerLocation location={location} />
-//     </div>
-//   );
-// };
+export { Root, Top, Bottom, Avatar, Name, Location };

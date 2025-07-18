@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { CustomButton } from "./custom-button";
+import { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { Button } from "./button";
 
-const meta: Meta<typeof CustomButton> = {
-  component: CustomButton,
+const meta: Meta<typeof Button> = {
+  component: Button,
   tags: ["autodocs"],
   args: {
     children: "Дивиться всі",
@@ -18,8 +18,8 @@ const meta: Meta<typeof CustomButton> = {
 
 export default meta;
 
-type Story = StoryObj<typeof CustomButton>;
+type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
-  render: (args) => <CustomButton {...args} />,
+  render: (args) => <Button {...args} />,
 };
