@@ -1,7 +1,7 @@
 "use client";
 import { SmartLink } from "@/shared/ui/smart-link";
 import { Tabs, TabsList, TabsTrigger } from "@/shared/ui/tabs";
-import { AppRoutes, RouteNames, MAIN_NAV_ITEMS } from "@/shared/config/routes";
+import { AppRoutes, MAIN_NAV_ITEMS } from "@/shared/config/routes";
 import React from "react";
 import { usePathname } from "next/navigation";
 
