@@ -5,7 +5,6 @@ import { tv } from "tailwind-variants";
 
 import logoXSVertical from "@/shared/assets/images/logo/logo-xs-vertical.svg";
 import logoMDHorizontal from "@/shared/assets/images/logo/logo-md-horizontal.svg";
-import { CustomButton } from "@/shared/ui/custom-button";
 import { HeartIcon } from "@/shared/assets/icons/heart-icon";
 import { CartIcon } from "@/shared/assets/icons/cart-icon";
 import { CatalogIcon } from "@/shared/assets/icons/catalog-icon";
@@ -18,6 +17,7 @@ import { MessageIcon } from "@/shared/assets/icons/message-icon";
 import { Smile } from "lucide-react";
 import { Item, MobileNavbar } from "@/shared/ui/mobile-navbar";
 import { MOBILE_NAV_ITEMS, AppRoutes } from "@/shared/config/routes";
+import { Button } from "@/shared/ui/button";
 
 const NAVBAR_ITEMS: Item[] = MOBILE_NAV_ITEMS.map((item) => ({
   ...item,
@@ -82,9 +82,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
             <SearchBar />
           </NavbarUi.ActionsItem>
           <NavbarUi.ActionsItem className={profile()}>
-            <CustomButton style={{ padding: "12px 20px" }}>
-              Вхід | Реєстрація
-            </CustomButton>
+            <Button style={{ padding: "12px 20px" }}>Вхід | Реєстрація</Button>
           </NavbarUi.ActionsItem>
           <NavbarUi.ActionsItem className={favorite()}>
             <HeartIcon />
@@ -143,9 +141,9 @@ const Location = () => {
 const CatalogButton = () => {
   return (
     <SmartLink href={AppRoutes.CATALOG}>
-      <CustomButton style={{ padding: "12px 20px" }} color="dark">
+      <Button style={{ padding: "12px 20px" }} color="dark">
         <CatalogIcon width={18} height={18} /> Каталог
-      </CustomButton>
+      </Button>
     </SmartLink>
   );
 };
