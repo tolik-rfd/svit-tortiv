@@ -17,41 +17,30 @@ import { SearchIcon } from "@/shared/assets/icons/search-icon";
 import { MessageIcon } from "@/shared/assets/icons/message-icon";
 import { Smile } from "lucide-react";
 import { Item, MobileNavbar } from "@/shared/ui/mobile-navbar";
+import { MOBILE_NAV_ITEMS, AppRoutes } from "@/shared/config/routes";
 
-const NAVBAR_ITEMS: Item[] = [
-  {
-    value: "catalog",
-    label: "Каталог",
-    href: "/catalog",
-    icon: <CatalogIcon />,
-  },
+const NAVBAR_ITEMS: Item[] = MOBILE_NAV_ITEMS.map((item) => ({
+  ...item,
+  icon: item.icon || getIconForRoute(item.href),
+}));
 
-  {
-    value: "favorites",
-    label: "Обране",
-    href: "/favorites",
-    icon: <HeartIcon />,
-  },
-
-  {
-    value: "chat",
-    label: "Чат",
-    href: "/chat",
-    icon: <MessageIcon />,
-  },
-  {
-    value: "profile",
-    label: "Профіль",
-    href: "/profile",
-    icon: <Smile />,
-  },
-  {
-    value: "orders",
-    label: "Кошик",
-    href: "/orders",
-    icon: <CartIcon />,
-  },
-];
+// Helper function to get icon for route
+function getIconForRoute(route: string) {
+  switch (route) {
+    case AppRoutes.CATALOG:
+      return <CatalogIcon />;
+    case AppRoutes.FAVORITES:
+      return <HeartIcon />;
+    case AppRoutes.CHAT:
+      return <MessageIcon />;
+    case AppRoutes.PROFILE:
+      return <Smile />;
+    case AppRoutes.ORDERS:
+      return <CartIcon />;
+    default:
+      return null;
+  }
+}
 
 const topNavbarStyles = tv({
   slots: {
@@ -129,9 +118,11 @@ export const Navbar: FC<NavbarProps> = (props) => {
 
 const Logo = () => {
   return (
-    <SmartLink href={"/"}>
-      <Image src={logoXSVertical} alt="Logo" className="lg:hidden" />
-      <Image src={logoMDHorizontal} alt="Logo" className="hidden lg:block" />
+    <SmartLink href={AppRoutes.HOME}>
+      <picture>
+        <source srcSet={logoMDHorizontal.src} media="(min-width: 1024px)" />
+        <img src={logoXSVertical.src} alt="Logo" loading="eager" />
+      </picture>
     </SmartLink>
   );
 };
@@ -151,9 +142,11 @@ const Location = () => {
 
 const CatalogButton = () => {
   return (
-    <CustomButton style={{ padding: "12px 20px" }} color="dark">
-      <CatalogIcon width={18} height={18} /> Каталог
-    </CustomButton>
+    <SmartLink href={AppRoutes.CATALOG}>
+      <CustomButton style={{ padding: "12px 20px" }} color="dark">
+        <CatalogIcon width={18} height={18} /> Каталог
+      </CustomButton>
+    </SmartLink>
   );
 };
 

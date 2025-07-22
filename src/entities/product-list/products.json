@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "name": "Шварцвальдський вишневий торт",
+    "imageUrl": "/images/image-1.png",
+    "isFavorite": false,
+    "unit": "кг",
+    "price": 400,
+    "currency": "₴",
+    "available": true,
+    "sale": {
+      "isActive": true,
+      "salePercent": 25
+    },
+    "seller": {
+      "id": "1",
+      "name": "Natali@Cake",
+      "location": "м. Київ",
+      "avatarUrl": "/photos/photo-1.png"
+    },
+    "weights": [
+      {
+        "id": "1",
+        "value": 2
+      },
+      {
+        "id": "2",
+        "value": 4
+      },
+      {
+        "id": "3",
+        "value": 5
+      },
+      {
+        "id": "4",
+        "value": 8
+      }
+    ],
+    "amounts": null,
+    "delivery": {
+      "timeDays": 3,
+      "cost": 600
+    }
+  },
+  {
+    "id": "2",
+    "name": "Шварцвальдський вишневий торт",
+    "imageUrl": "/images/image-1.png",
+    "isFavorite": true,
+    "unit": "кг",
+    "price": 400,
+    "currency": "₴",
+    "available": true,
+    "sale": {
+      "isActive": false
+    },
+    "seller": {
+      "id": "1",
+      "name": "Natali@Cake",
+      "location": "м. Київ",
+      "avatarUrl": "/photos/photo-1.png"
+    },
+    "weights": [
+      {
+        "id": "1",
+        "value": 2
+      },
+      {
+        "id": "2",
+        "value": 4
+      },
+      {
+        "id": "3",
+        "value": 5
+      },
+      {
+        "id": "4",
+        "value": 8
+      }
+    ],
+    "amounts": null,
+
+    "delivery": {
+      "timeDays": 3,
+      "cost": 600
+    }
+  },
+  {
+    "id": "3",
+    "name": "Шварцвальдський вишневий торт",
+    "imageUrl": "/images/image-1.png",
+    "isFavorite": true,
+    "unit": "шт",
+    "price": 100,
+    "currency": "₴",
+    "available": true,
+    "sale": {
+      "isActive": false
+    },
+    "seller": {
+      "id": "1",
+      "name": "Natali@Cake",
+      "location": "м. Київ",
+      "avatarUrl": "/photos/photo-1.png"
+    },
+    "weights": null,
+    "amounts": [
+      {
+        "id": "1",
+        "value": 12
+      },
+      {
+        "id": "2",
+        "value": 24
+      }
+    ],
+    "delivery": {
+      "timeDays": 3,
+      "cost": 600
+    }
+  }
+]

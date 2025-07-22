@@ -1,11 +1,12 @@
 import { FC } from "react";
-import { Navbar } from "../navbar/navbar";
+import { Navbar } from "./navbar";
 import { PageContainer } from "@/shared/ui/page-container";
 import { tv } from "tailwind-variants";
+import { NavTabs } from "./nav-tabs";
 
 const headerStyles = tv({
   slots: {
-    header: "sticky top-0 left-0 z-50 w-full bg-custom-background",
+    header: "sticky top-0 left-0 z-50  w-full  bg-custom-background  py-5.5",
   },
 });
 
@@ -19,6 +20,9 @@ export const Header: FC<HeaderProps> = (props) => {
     <header className={header()}>
       <PageContainer>
         <Navbar />
+        <div className="mt-9 flex w-full justify-center">
+          <NavTabs />
+        </div>
       </PageContainer>
     </header>
   );

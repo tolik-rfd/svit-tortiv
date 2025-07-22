@@ -1,5 +1,4 @@
 import * as React from "react";
-import { cn } from "@/shared/lib/utils";
 import { BaseButton, type BaseButtonProps } from "../base-button";
 import { CloseIcon } from "@/shared/assets/icons/close-icon";
 import { VariantProps, tv } from "tailwind-variants";

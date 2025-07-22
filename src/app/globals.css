@@ -32,12 +32,12 @@
   --leading-custom-16: var(--line-height-custom-16);
 
   /* Font Family */
-  --font-e-ukraine: var(--font-e-ukraine);
-  --font-manrope: var(--font-manrope);
+  --font-e-ukraine: var(--font-e-ukraine), sans-serif;
 
   /* Custom Colors */
   --color-custom-background: var(--color-custom-background);
   --color-custom-orange: var(--color-custom-orange);
+  --color-custom-red: var(--color-custom-red);
   --color-custom-tiffany: var(--color-custom-tiffany);
   --color-custom-blue: var(--color-custom-blue);
   --color-custom-lilac: var(--color-custom-lilac);
@@ -49,6 +49,7 @@
   --color-custom-gray: var(--color-custom-gray);
   --color-custom-dark: var(--color-custom-dark);
   --color-custom-chocolate: var(--color-custom-chocolate);
+  --color-custom-chocolate-dark: var(--color-custom-chocolate-dark);
   --color-custom-coral: var(--color-custom-coral);
   --color-custom-ocean: var(--color-custom-ocean);
 
@@ -79,8 +80,9 @@
   --color-chart-5: var(--chart-5);
 
   /* Screens */
-  --screen-xs-custom: var(--screen-xs-custom);
-  --screen-xl-custom: var(--screen-xl-custom);
+  --breakpoint-xs-custom: 360px;
+  --breakpoint-md-custom: 710px;
+  --breakpoint-xl-custom: 1440px;
 
   /* Border Radius */
   --radius-custom-24: var(--border-radius-custom-24);
@@ -96,6 +98,7 @@
   /* Color Palette */
   --color-custom-background: #fcf7f4;
   --color-custom-orange: #e1780e;
+  --color-custom-red: #e10e0e;
   --color-custom-tiffany: #a0d8e1;
   --color-custom-blue: #15a6e5;
   --color-custom-lilac: #dfc6ff;
@@ -107,6 +110,7 @@
   --color-custom-gray: #e5ded9;
   --color-custom-dark: #331207;
   --color-custom-chocolate: #83491d;
+  --color-custom-chocolate-dark: #5b3a3a;
   --color-custom-coral: #dd7461;
   --color-custom-ocean: #015563;
 
@@ -139,10 +143,6 @@
   --space-custom-10: 0.625rem;
   --space-custom-18: 1.125rem;
 
-  /* Font */
-  --font-e-ukraine: "e-Ukraine", sans-serif;
-  --font-manrope: "Manrope", sans-serif;
-
   /* Font Sizes */
   --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.875rem; /* 14px */
@@ -161,6 +161,7 @@
 
   /* Screens */
   --screen-xs-custom: 360px;
+  --screen-md-custom: 710px;
   --screen-xl-custom: 1440px;
 
   /* Border Radius */
@@ -202,10 +203,24 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
     font-size: 16px;
+    /* overflow-y: scroll; */
+    scrollbar-gutter: stable;
   }
   body {
+    @apply bg-background font-e-ukraine font-normal text-foreground;
     @apply bg-custom-background;
     @apply min-h-screen;
   }
