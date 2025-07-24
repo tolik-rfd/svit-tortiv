@@ -1,1 +1,4 @@
-export { HomePageLayout as default, metadata } from '@/pages/home-page/';
+export {
+  HomePageLayout as default,
+  metadata,
+} from "@/pages/home-promo/home-page";

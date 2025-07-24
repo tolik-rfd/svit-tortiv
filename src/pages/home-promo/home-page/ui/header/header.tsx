@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Navbar } from "./navbar";
 import { PageContainer } from "@/shared/ui/page-container";
 import { tv } from "tailwind-variants";
-import { NavTabs } from "./nav-tabs";
 
 const headerStyles = tv({
   slots: {
@@ -20,9 +19,6 @@ export const Header: FC<HeaderProps> = (props) => {
     <header className={header()}>
       <PageContainer>
         <Navbar />
-        <div className="mt-9 flex w-full justify-center">
-          <NavTabs />
-        </div>
       </PageContainer>
     </header>
   );
