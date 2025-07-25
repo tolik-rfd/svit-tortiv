@@ -4,7 +4,7 @@ import { tv, VariantProps } from "tailwind-variants";
 import React from "react";
 
 export const buttonVariants = tv({
-  base: "font-manrope inline-flex cursor-pointer items-center justify-center gap-[0.625rem] rounded-custom-60 text-sm leading-[1.2] font-semibold whitespace-nowrap text-white uppercase transition-all outline-none disabled:pointer-events-none disabled:opacity-50",
+  base: "font-manrope inline-flex cursor-pointer items-center justify-center gap-[0.625rem] rounded-[3.75rem] text-sm leading-[1.2] font-semibold whitespace-nowrap text-white uppercase transition-all outline-none disabled:pointer-events-none disabled:opacity-50",
 
   variants: {
     variant: {
@@ -20,11 +20,11 @@ export const buttonVariants = tv({
     },
 
     size: {
-      xs: "px-[66px] py-[13px]",
-      sm: "px-[103px] py-[16px]",
-      md: "px-[103px] py-[21px] text-base",
-      lg: "px-[96px] py-[24px] text-lg",
-      full: "w-full py-[11.5px] text-base",
+      xs: "px-[4.125rem] py-[0.8125rem]",
+      sm: "px-[6.4375rem] py-[1rem]",
+      md: "px-[6.4375rem] py-[1.3125rem] text-base",
+      lg: "px-[6rem] py-[1.5rem] text-lg",
+      full: "w-full py-[0.71875rem] text-base",
     },
   },
 
@@ -73,13 +73,13 @@ export const buttonVariants = tv({
   },
 });
 
-export interface ButtonProps
+interface buttonProps
   extends Omit<BaseButtonProps, "color">,
     VariantProps<typeof buttonVariants> {
   children: React.ReactNode;
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<HTMLButtonElement, buttonProps>(
   ({ className, color, variant, size, children, ...rest }, ref) => {
     return (
       <BaseButton
