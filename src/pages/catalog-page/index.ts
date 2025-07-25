@@ -1,1 +1,1 @@
-export { default as CatalogPage } from "./catalog-page";
+export { default as CatalogPage } from "./ui/catalog-page";

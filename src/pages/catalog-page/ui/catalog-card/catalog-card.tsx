@@ -1,18 +1,19 @@
 import React, { ComponentPropsWithoutRef, FC } from "react";
-import { ProductCard } from "../../entities/product-card";
+import { ProductCard } from "@/entities/product-card";
 import Link from "next/link";
 import { Sale } from "./sale";
-import { AddToFavoritesButton } from "./features/add-to-favorites-button";
-import { AddToCartButton } from "./features/add-to-cart-button";
+import { AddToFavoritesButton } from "@/pages/catalog-page/ui/catalog-card/features/add-to-favorites-button";
+import { AddToCartButton } from "@/pages/catalog-page/ui/catalog-card/features/add-to-cart-button";
 import { Button } from "@/shared/ui/button";
-import { CardTabs } from "./card-tabs";
-import { Seller } from "./seller";
-import { Media } from "./media";
+import { CatalogCardTabs } from "./card-tabs/catalog-card-tabs";
+import { Seller } from "@/pages/catalog-page/ui/catalog-card/seller";
+import { Media } from "@/entities/product-card/ui/media";
 import { Delivery } from "./delivery";
 import { DeliveryLocationIcon } from "@/shared/assets/icons/delivery-location-icon";
 import { ClockIcon } from "@/shared/assets/icons/clock-icon";
 import { MoneyIcon } from "@/shared/assets/icons/money-icon";
-import { ProductType } from "@/entities/product-list/types/product";
+import { ProductType } from "@/pages/catalog-page/ui/catalog-list/types/product";
+import { AppRoutes } from "@/shared/config/routes";
 
 interface CatalogCardProps extends ComponentPropsWithoutRef<"div"> {
   product: ProductType;
@@ -23,17 +24,21 @@ export const CatalogCard: FC<CatalogCardProps> = ({
   className,
   ...rest
 }) => {
+  const { id, seller, imageUrl, isFavorite, name, sale, delivery } = product;
+
+  const path = `${AppRoutes.CATALOG}/${id}`;
+
   return (
     <ProductCard.Root className={className} {...rest}>
       <ProductCard.Header>
         <Seller.Root>
           <Seller.Top>
-            <Seller.Avatar seller={product.seller} />
-            <Seller.Name name={product.seller.name} />
+            <Seller.Avatar seller={seller} />
+            <Seller.Name name={seller.name} />
           </Seller.Top>
 
           <Seller.Bottom>
-            <Seller.Location location={product.seller.location} />
+            <Seller.Location location={seller.location} />
           </Seller.Bottom>
         </Seller.Root>
       </ProductCard.Header>
@@ -41,25 +46,25 @@ export const CatalogCard: FC<CatalogCardProps> = ({
       <ProductCard.Body className="flex flex-col gap-3">
         <Media.Root>
           <Link href="#">
-            <Media.Photo imageUrl={product.imageUrl}></Media.Photo>
+            <Media.Photo imageUrl={imageUrl}></Media.Photo>
           </Link>
 
-          <Media.TopLeft>{product.sale?.isActive && <Sale />}</Media.TopLeft>
+          <Media.TopLeft>{sale?.isActive && <Sale />}</Media.TopLeft>
 
           <Media.TopRight>
-            <AddToFavoritesButton isFavorite={product.isFavorite} />
+            <AddToFavoritesButton isFavorite={isFavorite} />
           </Media.TopRight>
         </Media.Root>
 
-        <ProductCard.Title name={product.name} className="mb-1" />
+        <ProductCard.Title name={name} className="mb-1" />
 
-        <CardTabs product={product}></CardTabs>
+        <CatalogCardTabs product={product}></CatalogCardTabs>
 
         <ProductCard.Actions>
           <AddToCartButton />
 
           <Button size="full" color="gray" asChild>
-            <Link href={`../products/${product.id}`}>Детальніше</Link>
+            <Link href={path}>Детальніше</Link>
           </Button>
         </ProductCard.Actions>
       </ProductCard.Body>
@@ -73,12 +78,12 @@ export const CatalogCard: FC<CatalogCardProps> = ({
 
           <Delivery.Item>
             <ClockIcon />
-            <Delivery.Title title={`${product.delivery.timeDays} дні`} />
+            <Delivery.Title title={`${delivery.timeDays} дні`} />
           </Delivery.Item>
 
           <Delivery.Item>
             <MoneyIcon />
-            <Delivery.Title title={`${product.delivery.cost} грн`} />
+            <Delivery.Title title={`${delivery.cost} грн`} />
           </Delivery.Item>
         </Delivery.Root>
       </ProductCard.Footer>

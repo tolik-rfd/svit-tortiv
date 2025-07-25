@@ -1,1 +1,1 @@
-export * as ProductCard from "./product-card";
+export * as ProductCard from "./ui/product-card";

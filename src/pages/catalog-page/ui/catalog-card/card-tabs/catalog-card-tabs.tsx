@@ -1,13 +1,13 @@
-import { ProductType } from "@/entities/product-list/types/product";
-import { ProductValueType } from "@/entities/product-list/types/product-value";
+import { ProductType } from "@/pages/catalog-page/ui/catalog-list/types/product";
+import { ProductValueType } from "@/pages/catalog-page/ui/catalog-list/types/product-value";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs";
 import React, { ComponentPropsWithoutRef, FC, useMemo, useState } from "react";
 
-interface CardTabsProps extends ComponentPropsWithoutRef<"div"> {
+interface CatalogCardTabsProps extends ComponentPropsWithoutRef<"div"> {
   product: ProductType;
 }
 
-export const CardTabs: FC<CardTabsProps> = ({ product }) => {
+export const CatalogCardTabs: FC<CatalogCardTabsProps> = ({ product }) => {
   const { weights, amounts, unit, price, sale, currency } = product;
 
   const options: ProductValueType[] | null = weights ?? amounts;

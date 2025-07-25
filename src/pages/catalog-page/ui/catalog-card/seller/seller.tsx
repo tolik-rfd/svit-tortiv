@@ -1,6 +1,6 @@
 import { FC, useMemo } from "react";
 import classNames from "classnames";
-import { SellerType } from "../../../entities/product-list/types/seller";
+import { SellerType } from "../../catalog-list/types/seller";
 import {
   Avatar as BaseAvatar,
   AvatarFallback,

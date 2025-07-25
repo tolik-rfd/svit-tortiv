@@ -1,12 +1,11 @@
 import { FC } from "react";
 import classNames from "classnames";
 import Image from "next/image";
-import { SlotType } from "../types/slot";
+import { SlotType } from "../../../../pages/catalog-page/ui/catalog-card/types/slot";
 
 const Root: FC<SlotType> = ({ children, className, ...rest }) => {
   return (
     <div
-      style={{ width: 300, height: 265 }}
       className={classNames("relative h-[16.5625rem] w-[18.75rem]", className)}
       {...rest}
     >

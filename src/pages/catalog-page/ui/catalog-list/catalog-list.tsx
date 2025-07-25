@@ -2,14 +2,14 @@
 import React, { FC } from "react";
 import { ProductType } from "./types/product";
 import classNames from "classnames";
-import { CatalogCard } from "../../widgets/catalog-card/catalog-card";
+import { CatalogCard } from "../catalog-card/catalog-card";
 
-type ProductListProps = {
+type CatalogListProps = {
   products: ProductType[];
   className?: string;
 };
 
-export const ProductList: FC<ProductListProps> = ({ products, className }) => {
+export const CatalogList: FC<CatalogListProps> = ({ products, className }) => {
   return (
     <div
       className={classNames(
