@@ -7,13 +7,13 @@ import { AddToCartButton } from "@/pages/catalog-page/ui/catalog-card/features/a
 import { Button } from "@/shared/ui/button";
 import { CatalogCardTabs } from "./card-tabs/catalog-card-tabs";
 import { Seller } from "@/pages/catalog-page/ui/catalog-card/seller";
-import { Media } from "@/entities/product-card/ui/media";
 import { Delivery } from "./delivery";
 import { DeliveryLocationIcon } from "@/shared/assets/icons/delivery-location-icon";
 import { ClockIcon } from "@/shared/assets/icons/clock-icon";
 import { MoneyIcon } from "@/shared/assets/icons/money-icon";
 import { ProductType } from "@/pages/catalog-page/ui/catalog-list/types/product";
 import { AppRoutes } from "@/shared/config/routes";
+import Image from "next/image";
 
 interface CatalogCardProps extends ComponentPropsWithoutRef<"div"> {
   product: ProductType;
@@ -44,17 +44,25 @@ export const CatalogCard: FC<CatalogCardProps> = ({
       </ProductCard.Header>
 
       <ProductCard.Body className="flex flex-col gap-3">
-        <Media.Root>
+        <ProductCard.Media>
           <Link href="#">
-            <Media.Photo imageUrl={imageUrl}></Media.Photo>
+            <Image
+              src={imageUrl}
+              alt="Product photo"
+              className={className}
+              width={300}
+              height={265}
+            ></Image>
           </Link>
 
-          <Media.TopLeft>{sale?.isActive && <Sale />}</Media.TopLeft>
+          <ProductCard.TopLeft>
+            {sale?.isActive && <Sale />}
+          </ProductCard.TopLeft>
 
-          <Media.TopRight>
+          <ProductCard.TopRight>
             <AddToFavoritesButton isFavorite={isFavorite} />
-          </Media.TopRight>
-        </Media.Root>
+          </ProductCard.TopRight>
+        </ProductCard.Media>
 
         <ProductCard.Title name={name} className="mb-1" />
 

@@ -62,4 +62,33 @@ const Actions: FC<SlotType> = ({ children, className, ...rest }) => {
   );
 };
 
-export { Root, Header, Body, Footer, Title, Actions };
+const Media: FC<SlotType> = ({ children, className, ...rest }) => {
+  return (
+    <div
+      className={classNames("relative h-[16.5625rem] w-[18.75rem]", className)}
+      {...rest}
+    >
+      {children}
+    </div>
+  );
+};
+
+const TopLeft: FC<SlotType> = ({ children, className, ...rest }) => (
+  <div
+    className={classNames("absolute top-[8px] left-[12px]", className)}
+    {...rest}
+  >
+    {children}
+  </div>
+);
+
+const TopRight: FC<SlotType> = ({ children, className, ...rest }) => (
+  <div
+    className={classNames("absolute top-[8px] right-[12px]", className)}
+    {...rest}
+  >
+    {children}
+  </div>
+);
+
+export { Root, Header, Body, Footer, Title, Actions, Media, TopLeft, TopRight };
