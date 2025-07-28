@@ -2,7 +2,6 @@
 
 import { ComponentPropsWithoutRef, ComponentRef, forwardRef } from "react";
 import { Content, List, Root, Trigger } from "@radix-ui/react-tabs";
-
 import { createContext } from "@/shared/hooks/context";
 import { VariantProps, tv } from "tailwind-variants";
 
@@ -19,7 +18,7 @@ const [TabsContextProvider, useTabsContext] = createContext<TabsContextValue>({
 ////////////////////////////////////////////////////////////////////////////////////
 
 interface TabsProps extends ComponentPropsWithoutRef<typeof Root> {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "third";
 }
 
 const Tabs = forwardRef<ComponentRef<typeof Root>, TabsProps>((props, ref) => {
@@ -42,6 +41,7 @@ const tabsListVariants = tv({
     variant: {
       primary: "rounded-custom-50 bg-custom-cofe p-1",
       secondary: "gap-6 p-2 sm:gap-6 sm:p-custom-10",
+      third: "gap-2 bg-transparent",
     },
   },
   defaultVariants: {
@@ -79,6 +79,8 @@ const tabsTriggerVariants = tv({
         "text-dark rounded-custom-80 bg-custom-cofe p-0.5 px-10 py-3.5 text-xl font-normal uppercase data-[state=active]:bg-custom-dark  data-[state=active]:text-white",
       secondary:
         "font-medium text-custom-light-gray data-[state=active]:text-black ",
+      third:
+        "rounded-custom-16 px-2 py-0.5 text-sm leading-none transition-none data-[state=active]:bg-custom-cofe data-[state=active]:text-base",
     },
   },
   defaultVariants: {
@@ -115,6 +117,7 @@ const tabsContentVariants = tv({
       primary:
         "mt-2 ring-offset-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none",
       secondary: "mt-custom-10 px-2 text-sm font-light sm:text-xl",
+      third: "",
     },
   },
   defaultVariants: {

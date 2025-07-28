@@ -1,6 +1,5 @@
 import { Navbar as NavbarUi } from "@/shared/ui/navbar";
 import { FC } from "react";
-import Image from "next/image";
 import { tv } from "tailwind-variants";
 
 import logoXSVertical from "@/shared/assets/images/logo/logo-xs-vertical.svg";

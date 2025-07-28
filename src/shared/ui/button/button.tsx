@@ -4,7 +4,7 @@ import { tv, VariantProps } from "tailwind-variants";
 import React from "react";
 
 export const buttonVariants = tv({
-  base: "inline-flex cursor-pointer items-center justify-center gap-[0.625rem] rounded-[3.75rem] font-manrope text-sm leading-[1.2] font-semibold whitespace-nowrap text-white uppercase transition-all outline-none disabled:pointer-events-none disabled:opacity-50",
+  base: "font-manrope inline-flex cursor-pointer items-center justify-center gap-[0.625rem] rounded-[3.75rem] text-sm leading-[1.2] font-semibold whitespace-nowrap text-white uppercase transition-all outline-none disabled:pointer-events-none disabled:opacity-50",
 
   variants: {
     variant: {
